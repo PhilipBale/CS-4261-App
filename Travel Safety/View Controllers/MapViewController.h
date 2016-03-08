@@ -8,9 +8,20 @@
 
 #import <UIKit/UIKit.h>
 #import <GoogleMaps/GoogleMaps.h>
+#import "InfoViewController.h"
 
-@interface MapViewController : UIViewController
+@interface MapViewController : UIViewController<GMSAutocompleteResultsViewControllerDelegate, ModalViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet GMSMapView *mapView;
+
+@property (nonatomic, strong) GMSAutocompleteResultsViewController *resultsViewController;
+@property (nonatomic, strong) UISearchController *searchController;
+
+@property (weak, nonatomic) IBOutlet UIView *searchBarContainer;
+
+@property (weak, nonatomic) IBOutlet UIView *modalContainerView;
+
+@property (weak, nonatomic) IBOutlet UIButton *leftActionButton;
+@property (weak, nonatomic) IBOutlet UIButton *rightActionButton;
 
 @end

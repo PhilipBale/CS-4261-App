@@ -16,14 +16,94 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    _resultsViewController = [[GMSAutocompleteResultsViewController alloc] init];
+    _resultsViewController.delegate = self;
+    
+    _searchController = [[UISearchController alloc]
+                         initWithSearchResultsController:_resultsViewController];
+    _searchController.searchResultsUpdater = _resultsViewController;
+    
+    [self.searchBarContainer addSubview:_searchController.searchBar];
+    
+    // When UISearchController presents the results view, present it in
+    // this view controller, not one further up the chain.
+    self.definesPresentationContext = YES;
+    
+    self.leftActionButton.layer.cornerRadius = self.leftActionButton.bounds.size.width / 2;
+    self.rightActionButton.layer.cornerRadius = self.rightActionButton.bounds.size.width / 2;
+    
+    [self.modalContainerView setAlpha:0];
 }
+
+// Handle the user's selection.
+- (void)resultsController:(GMSAutocompleteResultsViewController *)resultsController
+ didAutocompleteWithPlace:(GMSPlace *)place {
+    [self dismissViewControllerAnimated:YES completion:nil];
+    // Do something with the selected place.
+    NSLog(@"Place name %@", place.name);
+    NSLog(@"Place address %@", place.formattedAddress);
+    NSLog(@"Place attributions %@", place.attributions.string);
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        _searchController.searchBar.frame = self.searchBarContainer.bounds;
+    });
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+}
+
+- (void)resultsController:(GMSAutocompleteResultsViewController *)resultsController
+didFailAutocompleteWithError:(NSError *)error {
+    //[self dismissViewControllerAnimated:YES completion:nil];
+    // TODO: handle the error.
+    NSLog(@"Error: %@", [error description]);
+}
+
+// Turn the network activity indicator on and off again.
+- (void)didRequestAutocompletePredictionsForResultsController:
+(GMSAutocompleteResultsViewController *)resultsController {
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+}
+
+- (void)didUpdateAutocompletePredictionsForResultsController:
+(GMSAutocompleteResultsViewController *)resultsController {
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)leftButtonPressed:(id)sender {
+    NSLog(@"Left button pressed");
+    InfoViewController *infoController = [[InfoViewController alloc] initWithNibName:@"InfoViewController" bundle:nil];
+    [infoController setDelegate:self];
+    
+    [self addChildViewController:infoController];
+    [infoController.view setFrame:self.modalContainerView.frame];
+    [self.view addSubview:infoController.view];
+    
+    [infoController didMoveToParentViewController:self];
+}
+- (IBAction)rightButtonPressed:(id)sender {
+    NSLog(@"Right button pressed");
+}
+
+
+-(void)exitRequested:(ModalViewController *)controller
+{
+    [controller.view removeFromSuperview];
+}
 /*
 #pragma mark - Navigation
 
