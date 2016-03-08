@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		392AC370E7D8392668361A18 /* libPods-Travel Safety.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 89ADC5FC795A2084FB799EB2 /* libPods-Travel Safety.a */; };
 		D42B7CCE1C8F3127008744CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D42B7CCD1C8F3127008744CE /* main.m */; };
 		D42B7CD11C8F3127008744CE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D42B7CD01C8F3127008744CE /* AppDelegate.m */; };
 		D42B7CD71C8F3127008744CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D42B7CD51C8F3127008744CE /* Main.storyboard */; };
 		D42B7CD91C8F3127008744CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D42B7CD81C8F3127008744CE /* Assets.xcassets */; };
 		D42B7CDC1C8F3127008744CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D42B7CDA1C8F3127008744CE /* LaunchScreen.storyboard */; };
+		D42B7CE81C8F3530008744CE /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D42B7CE71C8F3530008744CE /* MapViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		89ADC5FC795A2084FB799EB2 /* libPods-Travel Safety.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Travel Safety.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9968FFFCA9DC8C2D791E08B0 /* Pods-Travel Safety.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travel Safety.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Travel Safety/Pods-Travel Safety.debug.xcconfig"; sourceTree = "<group>"; };
+		C43970FE4B6E2AC17EF07C38 /* Pods-Travel Safety.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travel Safety.release.xcconfig"; path = "Pods/Target Support Files/Pods-Travel Safety/Pods-Travel Safety.release.xcconfig"; sourceTree = "<group>"; };
 		D42B7CC91C8F3127008744CE /* Travel Safety.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Travel Safety.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D42B7CCD1C8F3127008744CE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D42B7CCF1C8F3127008744CE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -23,6 +28,8 @@
 		D42B7CD81C8F3127008744CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D42B7CDB1C8F3127008744CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D42B7CDD1C8F3127008744CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D42B7CE61C8F3530008744CE /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapViewController.h; path = "View Controllers/MapViewController.h"; sourceTree = "<group>"; };
+		D42B7CE71C8F3530008744CE /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapViewController.m; path = "View Controllers/MapViewController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				392AC370E7D8392668361A18 /* libPods-Travel Safety.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +49,8 @@
 			children = (
 				D42B7CCB1C8F3127008744CE /* Travel Safety */,
 				D42B7CCA1C8F3127008744CE /* Products */,
+				FAC2243A8542BE8B0B9C9277 /* Pods */,
+				D78A7FC612C829C4F5902950 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +68,7 @@
 				D42B7CCF1C8F3127008744CE /* AppDelegate.h */,
 				D42B7CD01C8F3127008744CE /* AppDelegate.m */,
 				D42B7CD51C8F3127008744CE /* Main.storyboard */,
+				D42B7CE91C8F3535008744CE /* View Controllers */,
 				D42B7CD81C8F3127008744CE /* Assets.xcassets */,
 				D42B7CDA1C8F3127008744CE /* LaunchScreen.storyboard */,
 				D42B7CDD1C8F3127008744CE /* Info.plist */,
@@ -74,6 +85,32 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D42B7CE91C8F3535008744CE /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D42B7CE61C8F3530008744CE /* MapViewController.h */,
+				D42B7CE71C8F3530008744CE /* MapViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		D78A7FC612C829C4F5902950 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				89ADC5FC795A2084FB799EB2 /* libPods-Travel Safety.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FAC2243A8542BE8B0B9C9277 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9968FFFCA9DC8C2D791E08B0 /* Pods-Travel Safety.debug.xcconfig */,
+				C43970FE4B6E2AC17EF07C38 /* Pods-Travel Safety.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -81,9 +118,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D42B7CE01C8F3127008744CE /* Build configuration list for PBXNativeTarget "Travel Safety" */;
 			buildPhases = (
+				ACB5950B49E1D2969C52A5DD /* Check Pods Manifest.lock */,
 				D42B7CC51C8F3127008744CE /* Sources */,
 				D42B7CC61C8F3127008744CE /* Frameworks */,
 				D42B7CC71C8F3127008744CE /* Resources */,
+				04863D900A3D4D8D8D19F1FB /* Embed Pods Frameworks */,
+				4646164C2588B98A6ABE943E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -139,11 +179,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		04863D900A3D4D8D8D19F1FB /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Travel Safety/Pods-Travel Safety-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4646164C2588B98A6ABE943E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Travel Safety/Pods-Travel Safety-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ACB5950B49E1D2969C52A5DD /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D42B7CC51C8F3127008744CE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D42B7CE81C8F3530008744CE /* MapViewController.m in Sources */,
 				D42B7CD11C8F3127008744CE /* AppDelegate.m in Sources */,
 				D42B7CCE1C8F3127008744CE /* main.m in Sources */,
 			);
@@ -255,6 +344,7 @@
 		};
 		D42B7CE11C8F3127008744CE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9968FFFCA9DC8C2D791E08B0 /* Pods-Travel Safety.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Travel Safety/Info.plist";
@@ -266,6 +356,7 @@
 		};
 		D42B7CE21C8F3127008744CE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C43970FE4B6E2AC17EF07C38 /* Pods-Travel Safety.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Travel Safety/Info.plist";

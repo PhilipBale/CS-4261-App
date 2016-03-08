@@ -4,6 +4,6 @@
 # use_frameworks!
 
 target 'Travel Safety' do
-
+    pod 'GoogleMaps'
 end
 
