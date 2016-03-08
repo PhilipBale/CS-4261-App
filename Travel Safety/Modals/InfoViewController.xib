@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InfoViewController">
@@ -15,37 +17,68 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hello, world" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ULo-EV-m5k">
-                    <rect key="frame" x="116" y="229" width="87.5" height="20.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BNu-TA-70N">
-                    <rect key="frame" x="96.5" y="10" width="127" height="26.5"/>
+                    <rect key="frame" x="96" y="10" width="127" height="26.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Metz, France" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ytP-dz-D4J">
-                    <rect key="frame" x="20" y="44.5" width="280" height="19.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <rect key="frame" x="20" y="44" width="280" height="21.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stars" translatesAutoresizingMaskIntoConstraints="NO" id="mtA-UI-VSn">
+                    <rect key="frame" x="61" y="63" width="197" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="mtA-UI-VSn" secondAttribute="height" multiplier="232:47" id="71K-53-w31"/>
+                        <constraint firstAttribute="height" constant="40" id="FQG-JH-iLG"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4/7 people recommend" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e9J-R1-UES">
+                    <rect key="frame" x="8" y="101" width="304" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Important Statistics" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vOy-19-rgb">
+                    <rect key="frame" x="20" y="127" width="280" height="19.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feedback" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UOW-xq-Vid">
+                    <rect key="frame" x="20" y="246.5" width="280" height="19.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="vOy-19-rgb" secondAttribute="trailing" constant="20" id="1Ov-4O-j4C"/>
+                <constraint firstItem="e9J-R1-UES" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="78G-2h-UkT"/>
                 <constraint firstItem="ytP-dz-D4J" firstAttribute="top" secondItem="BNu-TA-70N" secondAttribute="bottom" constant="8" id="9RF-yJ-HuI"/>
                 <constraint firstItem="BNu-TA-70N" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="H9j-ve-yeJ"/>
                 <constraint firstItem="BNu-TA-70N" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="OWO-CL-Nuj"/>
+                <constraint firstItem="UOW-xq-Vid" firstAttribute="leading" secondItem="vOy-19-rgb" secondAttribute="leading" id="PbK-tw-ct2"/>
+                <constraint firstItem="vOy-19-rgb" firstAttribute="top" secondItem="e9J-R1-UES" secondAttribute="bottom" constant="10" id="RhK-0v-oWC"/>
+                <constraint firstItem="UOW-xq-Vid" firstAttribute="top" secondItem="vOy-19-rgb" secondAttribute="bottom" constant="100" id="TCF-re-LJB"/>
+                <constraint firstAttribute="trailingMargin" secondItem="e9J-R1-UES" secondAttribute="trailing" id="USW-no-6Ae"/>
+                <constraint firstItem="UOW-xq-Vid" firstAttribute="trailing" secondItem="vOy-19-rgb" secondAttribute="trailing" id="a2x-GB-PqN"/>
                 <constraint firstAttribute="trailing" secondItem="ytP-dz-D4J" secondAttribute="trailing" constant="20" id="bUy-xe-C09"/>
                 <constraint firstItem="ytP-dz-D4J" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="btt-Lx-kjo"/>
-                <constraint firstItem="ULo-EV-m5k" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="hkx-Hk-dCD"/>
-                <constraint firstItem="ULo-EV-m5k" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="otG-eR-QdG"/>
+                <constraint firstItem="e9J-R1-UES" firstAttribute="top" secondItem="mtA-UI-VSn" secondAttribute="bottom" constant="-2" id="dQ0-6N-Dax"/>
+                <constraint firstItem="mtA-UI-VSn" firstAttribute="top" secondItem="ytP-dz-D4J" secondAttribute="bottom" constant="-3" id="f72-pF-Gho"/>
+                <constraint firstItem="mtA-UI-VSn" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="l9h-75-z4z"/>
+                <constraint firstItem="vOy-19-rgb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="sit-GE-dz9"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
+    <resources>
+        <image name="stars" width="263" height="64"/>
+    </resources>
 </document>
