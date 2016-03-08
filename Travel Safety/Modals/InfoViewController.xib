@@ -27,11 +27,20 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Metz, France" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ytP-dz-D4J">
+                    <rect key="frame" x="20" y="44.5" width="280" height="19.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="ytP-dz-D4J" firstAttribute="top" secondItem="BNu-TA-70N" secondAttribute="bottom" constant="8" id="9RF-yJ-HuI"/>
                 <constraint firstItem="BNu-TA-70N" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="H9j-ve-yeJ"/>
                 <constraint firstItem="BNu-TA-70N" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="OWO-CL-Nuj"/>
+                <constraint firstAttribute="trailing" secondItem="ytP-dz-D4J" secondAttribute="trailing" constant="20" id="bUy-xe-C09"/>
+                <constraint firstItem="ytP-dz-D4J" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="btt-Lx-kjo"/>
                 <constraint firstItem="ULo-EV-m5k" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="hkx-Hk-dCD"/>
                 <constraint firstItem="ULo-EV-m5k" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="otG-eR-QdG"/>
             </constraints>

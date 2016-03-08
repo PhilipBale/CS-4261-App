@@ -140,6 +140,22 @@
                                     <action selector="rightButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dh2-Ka-KIc"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mrn-cs-KWr">
+                                <rect key="frame" x="129.5" y="400" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Mrn-cs-KWr" secondAttribute="height" multiplier="1:1" id="HEL-Rb-pzw"/>
+                                    <constraint firstAttribute="width" constant="60" id="oZh-eC-56o"/>
+                                </constraints>
+                                <state key="normal" image="error_icon"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="HEL-Rb-pzw"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="centerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BY4-21-40D"/>
+                                </connections>
+                            </button>
                             <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ap-8K-zmu">
                                 <rect key="frame" x="16" y="30" width="288" height="430"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -154,6 +170,7 @@
                             <constraint firstItem="0ap-8K-zmu" firstAttribute="top" secondItem="98h-rt-G3h" secondAttribute="top" id="IPK-4P-3gZ"/>
                             <constraint firstItem="mX6-7k-N5r" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="IkD-y7-0Ca"/>
                             <constraint firstItem="mX6-7k-N5r" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="JJ6-1H-2eP"/>
+                            <constraint firstItem="Mrn-cs-KWr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Kmd-mc-APU"/>
                             <constraint firstItem="rqA-B9-fMi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="N0s-Md-6WI"/>
                             <constraint firstItem="0ap-8K-zmu" firstAttribute="trailing" secondItem="98h-rt-G3h" secondAttribute="trailing" id="Pwn-vR-h18"/>
                             <constraint firstItem="rqA-B9-fMi" firstAttribute="leading" secondItem="98h-rt-G3h" secondAttribute="leading" id="QDk-Me-Bld"/>
@@ -161,12 +178,15 @@
                             <constraint firstItem="0ap-8K-zmu" firstAttribute="leading" secondItem="98h-rt-G3h" secondAttribute="leading" id="Uqb-PC-CuD"/>
                             <constraint firstItem="jf3-IF-SEO" firstAttribute="trailing" secondItem="98h-rt-G3h" secondAttribute="trailing" id="X1f-Pd-Phi"/>
                             <constraint firstItem="98h-rt-G3h" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="YHn-t9-THT"/>
+                            <constraint firstItem="Mrn-cs-KWr" firstAttribute="bottom" secondItem="jf3-IF-SEO" secondAttribute="bottom" id="Yx2-LF-Gis"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rqA-B9-fMi" secondAttribute="bottom" constant="20" id="Z1T-v0-naR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jf3-IF-SEO" secondAttribute="trailing" constant="15" id="aDH-WY-4fg"/>
                             <constraint firstItem="mX6-7k-N5r" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="adH-8Z-aNO"/>
                             <constraint firstItem="rqA-B9-fMi" firstAttribute="width" secondItem="jf3-IF-SEO" secondAttribute="width" id="gZ5-JO-XDj"/>
+                            <constraint firstItem="jf3-IF-SEO" firstAttribute="bottom" secondItem="rqA-B9-fMi" secondAttribute="bottom" id="gZ8-AL-ZzR"/>
                             <constraint firstItem="98h-rt-G3h" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="kxc-ss-pVO"/>
                             <constraint firstAttribute="trailing" secondItem="mX6-7k-N5r" secondAttribute="trailing" id="nem-tr-a7r"/>
+                            <constraint firstItem="Mrn-cs-KWr" firstAttribute="width" secondItem="Mrn-cs-KWr" secondAttribute="height" multiplier="1:1" id="th1-0U-IFn"/>
                             <constraint firstItem="0ap-8K-zmu" firstAttribute="bottom" secondItem="rqA-B9-fMi" secondAttribute="bottom" id="vVV-ms-wda"/>
                         </constraints>
                         <variation key="default">
@@ -194,6 +214,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="error_icon" width="300" height="300"/>
         <image name="info_icon" width="300" height="300"/>
         <image name="plus_icon" width="300" height="300"/>
     </resources>
