@@ -44,6 +44,10 @@
     NSLog(@"Place name %@", place.name);
     NSLog(@"Place address %@", place.formattedAddress);
     NSLog(@"Place attributions %@", place.attributions.string);
+    
+    CLLocationCoordinate2D coordinates = CLLocationCoordinate2DMake(40.683445,-7.0);
+    GMSCameraUpdate *updatedCamera = [GMSCameraUpdate setTarget:place.coordinate zoom:12];
+    [self.mapView animateWithCameraUpdate:updatedCamera];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -86,17 +90,26 @@ didFailAutocompleteWithError:(NSError *)error {
 
 - (IBAction)leftButtonPressed:(id)sender {
     NSLog(@"Left button pressed");
-    InfoViewController *infoController = [[InfoViewController alloc] initWithNibName:@"InfoViewController" bundle:nil];
-    [infoController setDelegate:self];
     
+    InfoViewController *infoController = [[InfoViewController alloc] initWithNibName:@"InfoViewController" bundle:nil];
     [self addChildViewController:infoController];
+    [infoController setDelegate:self];
+
+    
     [infoController.view setFrame:self.modalContainerView.frame];
     [self.view addSubview:infoController.view];
-    
     [infoController didMoveToParentViewController:self];
 }
 - (IBAction)rightButtonPressed:(id)sender {
     NSLog(@"Right button pressed");
+    AddFeedbackViewController *addFeedbackViewController = [[AddFeedbackViewController alloc] initWithNibName:@"AddFeedbackViewController" bundle:nil];
+    [self addChildViewController:addFeedbackViewController];
+    [addFeedbackViewController setDelegate:self];
+    
+    
+    [addFeedbackViewController.view setFrame:self.modalContainerView.frame];
+    [self.view addSubview:addFeedbackViewController.view];
+    [addFeedbackViewController didMoveToParentViewController:self];
 }
 
 

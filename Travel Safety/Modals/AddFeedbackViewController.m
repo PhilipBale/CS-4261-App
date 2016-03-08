@@ -1,25 +1,22 @@
 //
-//  ModalViewController.m
+//  AddFeedbackViewController.m
 //  Travel Safety
 //
 //  Created by Philip Bale on 3/8/16.
 //  Copyright © 2016 Philip Bale. All rights reserved.
 //
 
-#import "ModalViewController.h"
+#import "AddFeedbackViewController.h"
 
-@interface ModalViewController ()
+@interface AddFeedbackViewController ()
 
 @end
 
-@implementation ModalViewController
+@implementation AddFeedbackViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
-    [((ModalView *)self.view) setDelegate:self];
-    // Do any additional setup after loading the view.
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -27,10 +24,8 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)exitButtonPressed
-{
-    NSLog(@"Dismissing modal");
-    if (self.delegate) [self.delegate exitRequested:self];
+- (IBAction)submitButtonPressed:(id)sender {
+    [self exitButtonPressed];
 }
 
 /*

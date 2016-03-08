@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <GoogleMaps/GoogleMaps.h>
 #import "InfoViewController.h"
+#import "AddFeedbackViewController.h"
 
 @interface MapViewController : UIViewController<GMSAutocompleteResultsViewControllerDelegate, ModalViewControllerDelegate>
 

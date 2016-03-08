@@ -14,9 +14,9 @@
 {
     [super awakeFromNib];
     
-    [self setAlpha:.8];
+    [self setBackgroundColor:[[UIColor whiteColor] colorWithAlphaComponent:0.95]];
     
-    CGFloat buttonWidth = 20;
+    CGFloat buttonWidth = 25;
     self.exitButton = [[UIButton alloc] initWithFrame:CGRectMake(buttonWidth / 2, buttonWidth / 2, buttonWidth, buttonWidth)];
     UIImage *exitIcon = [UIImage imageNamed:@"exit_icon"];
     [self.exitButton setBackgroundImage:exitIcon forState:UIControlStateNormal];
