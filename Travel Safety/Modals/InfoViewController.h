@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "ModalViewController.h"
 
-@interface InfoViewController : ModalViewController
+@interface InfoViewController : ModalViewController<UITableViewDataSource, UITableViewDelegate>
+
+
+@property (weak, nonatomic) IBOutlet UITableView *miniReviewTableView;
 
 @end

@@ -20,6 +20,8 @@
 		D4CC60461C8F836000D114E4 /* ModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4CC60451C8F836000D114E4 /* ModalViewController.m */; };
 		D4CC604A1C8F892600D114E4 /* AddFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4CC60481C8F892600D114E4 /* AddFeedbackViewController.m */; };
 		D4CC604B1C8F892600D114E4 /* AddFeedbackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4CC60491C8F892600D114E4 /* AddFeedbackViewController.xib */; };
+		D4CC60501C9022FF00D114E4 /* ReviewMiniCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D4CC604E1C9022FF00D114E4 /* ReviewMiniCell.m */; };
+		D4CC60511C9022FF00D114E4 /* ReviewMiniCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4CC604F1C9022FF00D114E4 /* ReviewMiniCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,9 @@
 		D4CC60471C8F892600D114E4 /* AddFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddFeedbackViewController.h; path = Modals/AddFeedbackViewController.h; sourceTree = "<group>"; };
 		D4CC60481C8F892600D114E4 /* AddFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddFeedbackViewController.m; path = Modals/AddFeedbackViewController.m; sourceTree = "<group>"; };
 		D4CC60491C8F892600D114E4 /* AddFeedbackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddFeedbackViewController.xib; path = Modals/AddFeedbackViewController.xib; sourceTree = "<group>"; };
+		D4CC604D1C9022FF00D114E4 /* ReviewMiniCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReviewMiniCell.h; path = Cells/ReviewMiniCell.h; sourceTree = "<group>"; };
+		D4CC604E1C9022FF00D114E4 /* ReviewMiniCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReviewMiniCell.m; path = Cells/ReviewMiniCell.m; sourceTree = "<group>"; };
+		D4CC604F1C9022FF00D114E4 /* ReviewMiniCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ReviewMiniCell.xib; path = Cells/ReviewMiniCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +86,7 @@
 		D42B7CCB1C8F3127008744CE /* Travel Safety */ = {
 			isa = PBXGroup;
 			children = (
+				D4CC604C1C9022D500D114E4 /* Cells */,
 				D4CC603B1C8F80E200D114E4 /* Modals */,
 				D4CC603A1C8F7FF400D114E4 /* Views */,
 				D42B7CCF1C8F3127008744CE /* AppDelegate.h */,
@@ -134,6 +140,16 @@
 				D4CC60491C8F892600D114E4 /* AddFeedbackViewController.xib */,
 			);
 			name = Modals;
+			sourceTree = "<group>";
+		};
+		D4CC604C1C9022D500D114E4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D4CC604D1C9022FF00D114E4 /* ReviewMiniCell.h */,
+				D4CC604E1C9022FF00D114E4 /* ReviewMiniCell.m */,
+				D4CC604F1C9022FF00D114E4 /* ReviewMiniCell.xib */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		D78A7FC612C829C4F5902950 /* Frameworks */ = {
@@ -215,6 +231,7 @@
 			files = (
 				D4CC604B1C8F892600D114E4 /* AddFeedbackViewController.xib in Resources */,
 				D42B7CDC1C8F3127008744CE /* LaunchScreen.storyboard in Resources */,
+				D4CC60511C9022FF00D114E4 /* ReviewMiniCell.xib in Resources */,
 				D42B7CD91C8F3127008744CE /* Assets.xcassets in Resources */,
 				D4CC60431C8F810C00D114E4 /* InfoViewController.xib in Resources */,
 				D42B7CD71C8F3127008744CE /* Main.storyboard in Resources */,
@@ -278,6 +295,7 @@
 			files = (
 				D42B7CE81C8F3530008744CE /* MapViewController.m in Sources */,
 				D42B7CD11C8F3127008744CE /* AppDelegate.m in Sources */,
+				D4CC60501C9022FF00D114E4 /* ReviewMiniCell.m in Sources */,
 				D4CC60461C8F836000D114E4 /* ModalViewController.m in Sources */,
 				D4CC60391C8F7FBD00D114E4 /* ModalView.m in Sources */,
 				D4CC604A1C8F892600D114E4 /* AddFeedbackViewController.m in Sources */,

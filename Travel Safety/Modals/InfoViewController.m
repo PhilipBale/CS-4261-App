@@ -7,6 +7,7 @@
 //
 
 #import "InfoViewController.h"
+#import "ReviewMiniCell.h"
 
 @interface InfoViewController ()
 
@@ -17,12 +18,37 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.miniReviewTableView.delegate = self;
+    self.miniReviewTableView.dataSource = self;
     // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 10;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    ReviewMiniCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ReviewMiniCell"];
+    if (!cell)
+    {
+        [self.miniReviewTableView registerNib:[UINib nibWithNibName:@"ReviewMiniCell" bundle:nil] forCellReuseIdentifier:@"ReviewMiniCell"];
+        cell = [tableView dequeueReusableCellWithIdentifier:@"ReviewMiniCell"];
+    }
+    
+    
+    return cell;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 150;
 }
 
 /*

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReviewMiniCell" rowHeight="150" id="KGk-i7-Jjw" customClass="ReviewMiniCell">
+            <rect key="frame" x="0.0" y="0.0" width="376" height="154"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="376" height="153.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tom A. (Nashville)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1I-0f-oyW">
+                        <rect key="frame" x="13" y="13" width="172.5" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FUR-3O-F0Q">
+                        <rect key="frame" x="13" y="41" width="350" height="99.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <string key="text">This place is really neat.  You should go there. I think. Maybe not.  How are you? How is the weather? This app is pretty cool, don't you think? This place is really neat.  You should go there. I think. Maybe not.  How are you? How is the weather? This app is pretty cool, don't you think?</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="53 Reviews" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NR4-Ja-LHH">
+                        <rect key="frame" x="190.5" y="13" width="172.5" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.80000001190000003" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="FUR-3O-F0Q" secondAttribute="bottom" constant="5" id="D4h-6H-gF2"/>
+                    <constraint firstItem="FUR-3O-F0Q" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="5" id="Zme-BI-FcW"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="U1I-0f-oyW" secondAttribute="trailing" constant="5" id="b9o-C7-als"/>
+                    <constraint firstItem="NR4-Ja-LHH" firstAttribute="width" secondItem="U1I-0f-oyW" secondAttribute="width" id="boq-zl-Wy4"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="FUR-3O-F0Q" secondAttribute="trailing" constant="5" id="dKo-i5-p0l"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="NR4-Ja-LHH" secondAttribute="trailing" constant="5" id="gbf-Fx-oRL"/>
+                    <constraint firstItem="U1I-0f-oyW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="iMH-sd-7r9"/>
+                    <constraint firstItem="NR4-Ja-LHH" firstAttribute="leading" secondItem="U1I-0f-oyW" secondAttribute="trailing" constant="5" id="mfC-4H-G3M"/>
+                    <constraint firstItem="FUR-3O-F0Q" firstAttribute="top" secondItem="U1I-0f-oyW" secondAttribute="bottom" constant="7.5" id="pYc-g0-5lu"/>
+                    <constraint firstItem="NR4-Ja-LHH" firstAttribute="centerY" secondItem="U1I-0f-oyW" secondAttribute="centerY" id="pfR-VC-vBw"/>
+                    <constraint firstItem="U1I-0f-oyW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="5" id="sJ9-eG-1Kb"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="b9o-C7-als"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="243" y="400"/>
+        </tableViewCell>
+    </objects>
+</document>
