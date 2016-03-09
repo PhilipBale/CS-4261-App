@@ -33,6 +33,9 @@
     self.leftActionButton.layer.cornerRadius = self.leftActionButton.bounds.size.width / 2;
     self.rightActionButton.layer.cornerRadius = self.rightActionButton.bounds.size.width / 2;
     
+    self.heatMapView.layer.cornerRadius = self.heatMapView.bounds.size.width /2;
+    self.heatMapView.hidden = YES;
+    
     [self.modalContainerView setAlpha:0];
 }
 
@@ -47,6 +50,7 @@
     
     GMSCameraUpdate *updatedCamera = [GMSCameraUpdate setTarget:place.coordinate zoom:12];
     [self.mapView animateWithCameraUpdate:updatedCamera];
+    self.heatMapView.hidden = NO;
 }
 
 - (void)viewWillAppear:(BOOL)animated

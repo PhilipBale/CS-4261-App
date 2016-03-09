@@ -108,6 +108,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VjN-Vn-f9w">
+                                <rect key="frame" x="95" y="175" width="130" height="130"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="VjN-Vn-f9w" secondAttribute="height" multiplier="1:1" id="rMg-Jr-Thr"/>
+                                    <constraint firstAttribute="width" constant="130" id="sr1-Qv-Yi2"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="98h-rt-G3h">
                                 <rect key="frame" x="16" y="30" width="288" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -182,10 +190,12 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rqA-B9-fMi" secondAttribute="bottom" constant="20" id="Z1T-v0-naR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jf3-IF-SEO" secondAttribute="trailing" constant="15" id="aDH-WY-4fg"/>
                             <constraint firstItem="mX6-7k-N5r" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="adH-8Z-aNO"/>
+                            <constraint firstItem="VjN-Vn-f9w" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="eCR-NY-SWi"/>
                             <constraint firstItem="rqA-B9-fMi" firstAttribute="width" secondItem="jf3-IF-SEO" secondAttribute="width" id="gZ5-JO-XDj"/>
                             <constraint firstItem="jf3-IF-SEO" firstAttribute="bottom" secondItem="rqA-B9-fMi" secondAttribute="bottom" id="gZ8-AL-ZzR"/>
                             <constraint firstItem="98h-rt-G3h" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="kxc-ss-pVO"/>
                             <constraint firstAttribute="trailing" secondItem="mX6-7k-N5r" secondAttribute="trailing" id="nem-tr-a7r"/>
+                            <constraint firstItem="VjN-Vn-f9w" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pDG-1a-qHu"/>
                             <constraint firstItem="Mrn-cs-KWr" firstAttribute="width" secondItem="Mrn-cs-KWr" secondAttribute="height" multiplier="1:1" id="th1-0U-IFn"/>
                             <constraint firstItem="0ap-8K-zmu" firstAttribute="bottom" secondItem="rqA-B9-fMi" secondAttribute="bottom" id="vVV-ms-wda"/>
                         </constraints>
@@ -201,6 +211,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="heatMapView" destination="VjN-Vn-f9w" id="JWl-cf-OjE"/>
                         <outlet property="leftActionButton" destination="rqA-B9-fMi" id="rqv-FF-Ofn"/>
                         <outlet property="mapView" destination="mX6-7k-N5r" id="D9a-vq-wmF"/>
                         <outlet property="modalContainerView" destination="0ap-8K-zmu" id="Atp-fj-BZ1"/>

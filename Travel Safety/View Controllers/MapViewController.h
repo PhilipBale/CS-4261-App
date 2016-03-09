@@ -24,5 +24,6 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *leftActionButton;
 @property (weak, nonatomic) IBOutlet UIButton *rightActionButton;
+@property (weak, nonatomic) IBOutlet UIView *heatMapView;
 
 @end
