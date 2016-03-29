@@ -7,6 +7,7 @@
 //
 
 #import "AddFeedbackViewController.h"
+#import "TravelSafetyAPI.h"
 
 @interface AddFeedbackViewController ()
 
@@ -25,7 +26,15 @@
 }
 
 - (IBAction)submitButtonPressed:(id)sender {
-    [self exitButtonPressed];
+    NSLog(@"Recommend slider value: %f", [self.recommendSlider value]);
+    NSLog(@"Safety stars: %li", [self.safetyStars currentValue]);
+    
+    [TravelSafetyAPI postFeedback:[self.safetyStars currentValue] cleanliness:[self.cleanlinessStars currentValue] comfort:[self.comfortStars currentValue] info:self.infoTextView.text recommend:[self.recommendSlider value] completion:^(BOOL success) {
+        if (success) {
+            [self exitButtonPressed];
+        }
+    }];
+    
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{

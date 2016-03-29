@@ -11,6 +11,8 @@
 		D403A0E81CAB1A8000CF5909 /* HTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D403A0E71CAB1A8000CF5909 /* HTTPManager.m */; };
 		D403A0EB1CAB1B6000CF5909 /* TravelSafetyAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = D403A0EA1CAB1B6000CF5909 /* TravelSafetyAPI.m */; };
 		D403A0EE1CAB1D1900CF5909 /* Feedback.m in Sources */ = {isa = PBXBuildFile; fileRef = D403A0ED1CAB1D1900CF5909 /* Feedback.m */; };
+		D403A0F31CAB1F3F00CF5909 /* StarSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = D403A0F21CAB1F3F00CF5909 /* StarSelectView.m */; };
+		D403A0F51CAB1F5A00CF5909 /* StarSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D403A0F41CAB1F5A00CF5909 /* StarSelectView.xib */; };
 		D42B7CCE1C8F3127008744CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D42B7CCD1C8F3127008744CE /* main.m */; };
 		D42B7CD11C8F3127008744CE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D42B7CD01C8F3127008744CE /* AppDelegate.m */; };
 		D42B7CD71C8F3127008744CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D42B7CD51C8F3127008744CE /* Main.storyboard */; };
@@ -37,6 +39,9 @@
 		D403A0EA1CAB1B6000CF5909 /* TravelSafetyAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TravelSafetyAPI.m; path = Managers/TravelSafetyAPI.m; sourceTree = "<group>"; };
 		D403A0EC1CAB1D1900CF5909 /* Feedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Feedback.h; path = Models/Feedback.h; sourceTree = "<group>"; };
 		D403A0ED1CAB1D1900CF5909 /* Feedback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Feedback.m; path = Models/Feedback.m; sourceTree = "<group>"; };
+		D403A0F11CAB1F3F00CF5909 /* StarSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StarSelectView.h; path = Views/StarSelectView.h; sourceTree = "<group>"; };
+		D403A0F21CAB1F3F00CF5909 /* StarSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StarSelectView.m; path = Views/StarSelectView.m; sourceTree = "<group>"; };
+		D403A0F41CAB1F5A00CF5909 /* StarSelectView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StarSelectView.xib; path = Views/StarSelectView.xib; sourceTree = "<group>"; };
 		D42B7CC91C8F3127008744CE /* Travel Safety.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Travel Safety.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D42B7CCD1C8F3127008744CE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D42B7CCF1C8F3127008744CE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -156,6 +161,9 @@
 			children = (
 				D4CC60371C8F7FBD00D114E4 /* ModalView.h */,
 				D4CC60381C8F7FBD00D114E4 /* ModalView.m */,
+				D403A0F11CAB1F3F00CF5909 /* StarSelectView.h */,
+				D403A0F21CAB1F3F00CF5909 /* StarSelectView.m */,
+				D403A0F41CAB1F5A00CF5909 /* StarSelectView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -266,6 +274,7 @@
 				D42B7CD91C8F3127008744CE /* Assets.xcassets in Resources */,
 				D4CC60431C8F810C00D114E4 /* InfoViewController.xib in Resources */,
 				D42B7CD71C8F3127008744CE /* Main.storyboard in Resources */,
+				D403A0F51CAB1F5A00CF5909 /* StarSelectView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +341,7 @@
 				D4CC60461C8F836000D114E4 /* ModalViewController.m in Sources */,
 				D4CC60391C8F7FBD00D114E4 /* ModalView.m in Sources */,
 				D4CC604A1C8F892600D114E4 /* AddFeedbackViewController.m in Sources */,
+				D403A0F31CAB1F3F00CF5909 /* StarSelectView.m in Sources */,
 				D403A0E81CAB1A8000CF5909 /* HTTPManager.m in Sources */,
 				D4CC60421C8F810C00D114E4 /* InfoViewController.m in Sources */,
 				D42B7CCE1C8F3127008744CE /* main.m in Sources */,

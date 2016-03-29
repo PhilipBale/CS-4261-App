@@ -13,5 +13,7 @@
 
 
 @property (weak, nonatomic) IBOutlet UITableView *miniReviewTableView;
+@property (weak, nonatomic) IBOutlet UILabel *cityName;
+@property (weak, nonatomic) IBOutlet UITableView *feedbackTable;
 
 @end
