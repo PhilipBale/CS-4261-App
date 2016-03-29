@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       get '/', to: 'api#index'
-      get 'post_feedback', to: 'feedback#post_feedback'
+      post 'post_feedback', to: 'feedback#post_feedback'
       get 'fetch_feedback', to: 'feedback#fetch_feedback'
     end
   end

@@ -21,6 +21,7 @@
     self.miniReviewTableView.delegate = self;
     self.miniReviewTableView.dataSource = self;
     // Do any additional setup after loading the view from its nib.
+    [self.cityName setText:self.currentPlace.name];
 }
 
 - (void)didReceiveMemoryWarning {

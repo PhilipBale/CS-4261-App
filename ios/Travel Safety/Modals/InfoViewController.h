@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <GoogleMaps/GoogleMaps.h>
 #import "ModalViewController.h"
 
 @interface InfoViewController : ModalViewController<UITableViewDataSource, UITableViewDelegate>
@@ -15,5 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *miniReviewTableView;
 @property (weak, nonatomic) IBOutlet UILabel *cityName;
 @property (weak, nonatomic) IBOutlet UITableView *feedbackTable;
+
+@property (nonatomic, strong) GMSPlace *currentPlace;
 
 @end

@@ -28,7 +28,7 @@ class Api::V1::FeedbackController < Api::V1::ApiController
 
   private
   def post_feedback_params
-    params.require(:post).permit(:url_key, :user_id_array)
+    params.require(:feedback).permit(:safety, :cleanliness, :comfort, :info, :recommend)
   end
 
 

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <GoogleMaps/GoogleMaps.h>
 #import "ModalViewController.h"
 #import "StarSelectView.h"
 
@@ -18,5 +19,7 @@
 @property (weak, nonatomic) IBOutlet StarSelectView *safetyStars;
 @property (weak, nonatomic) IBOutlet StarSelectView *cleanlinessStars;
 @property (weak, nonatomic) IBOutlet StarSelectView *comfortStars;
+
+@property (nonatomic, strong) GMSPlace *currentPlace;
 
 @end

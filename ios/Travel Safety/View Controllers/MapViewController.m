@@ -11,9 +11,10 @@
 
 @interface MapViewController ()<CLLocationManagerDelegate>
 {
+
 }
 
-
+@property (nonatomic, strong) GMSPlace *currentPlace;
 @property (nonatomic,strong) CLLocationManager *locationManager;
 @property (nonatomic) CLLocationCoordinate2D currentLocation;
 
@@ -78,6 +79,7 @@
 - (void)resultsController:(GMSAutocompleteResultsViewController *)resultsController
  didAutocompleteWithPlace:(GMSPlace *)place {
     [self dismissViewControllerAnimated:YES completion:nil];
+    self.currentPlace = place;
     // Do something with the selected place.
     NSLog(@"Place name %@", place.name);
     NSLog(@"Place address %@", place.formattedAddress);
@@ -133,6 +135,7 @@ didFailAutocompleteWithError:(NSError *)error {
     NSLog(@"Left button pressed");
     
     InfoViewController *infoController = [[InfoViewController alloc] initWithNibName:@"InfoViewController" bundle:nil];
+    [infoController setCurrentPlace:self.currentPlace];
     [self addChildViewController:infoController];
     [infoController setDelegate:self];
     
@@ -144,6 +147,7 @@ didFailAutocompleteWithError:(NSError *)error {
 - (IBAction)rightButtonPressed:(id)sender {
     NSLog(@"Right button pressed");
     AddFeedbackViewController *addFeedbackViewController = [[AddFeedbackViewController alloc] initWithNibName:@"AddFeedbackViewController" bundle:nil];
+    [addFeedbackViewController setCurrentPlace:self.currentPlace];
     [self addChildViewController:addFeedbackViewController];
     [addFeedbackViewController setDelegate:self];
     
