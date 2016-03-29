@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		392AC370E7D8392668361A18 /* libPods-Travel Safety.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 89ADC5FC795A2084FB799EB2 /* libPods-Travel Safety.a */; };
+		D403A0E81CAB1A8000CF5909 /* HTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D403A0E71CAB1A8000CF5909 /* HTTPManager.m */; };
+		D403A0EB1CAB1B6000CF5909 /* TravelSafetyAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = D403A0EA1CAB1B6000CF5909 /* TravelSafetyAPI.m */; };
+		D403A0EE1CAB1D1900CF5909 /* Feedback.m in Sources */ = {isa = PBXBuildFile; fileRef = D403A0ED1CAB1D1900CF5909 /* Feedback.m */; };
 		D42B7CCE1C8F3127008744CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D42B7CCD1C8F3127008744CE /* main.m */; };
 		D42B7CD11C8F3127008744CE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D42B7CD01C8F3127008744CE /* AppDelegate.m */; };
 		D42B7CD71C8F3127008744CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D42B7CD51C8F3127008744CE /* Main.storyboard */; };
@@ -28,6 +31,12 @@
 		89ADC5FC795A2084FB799EB2 /* libPods-Travel Safety.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Travel Safety.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9968FFFCA9DC8C2D791E08B0 /* Pods-Travel Safety.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travel Safety.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Travel Safety/Pods-Travel Safety.debug.xcconfig"; sourceTree = "<group>"; };
 		C43970FE4B6E2AC17EF07C38 /* Pods-Travel Safety.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travel Safety.release.xcconfig"; path = "Pods/Target Support Files/Pods-Travel Safety/Pods-Travel Safety.release.xcconfig"; sourceTree = "<group>"; };
+		D403A0E61CAB1A8000CF5909 /* HTTPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTTPManager.h; path = Managers/HTTPManager.h; sourceTree = "<group>"; };
+		D403A0E71CAB1A8000CF5909 /* HTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTTPManager.m; path = Managers/HTTPManager.m; sourceTree = "<group>"; };
+		D403A0E91CAB1B6000CF5909 /* TravelSafetyAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TravelSafetyAPI.h; path = Managers/TravelSafetyAPI.h; sourceTree = "<group>"; };
+		D403A0EA1CAB1B6000CF5909 /* TravelSafetyAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TravelSafetyAPI.m; path = Managers/TravelSafetyAPI.m; sourceTree = "<group>"; };
+		D403A0EC1CAB1D1900CF5909 /* Feedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Feedback.h; path = Models/Feedback.h; sourceTree = "<group>"; };
+		D403A0ED1CAB1D1900CF5909 /* Feedback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Feedback.m; path = Models/Feedback.m; sourceTree = "<group>"; };
 		D42B7CC91C8F3127008744CE /* Travel Safety.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Travel Safety.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D42B7CCD1C8F3127008744CE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D42B7CCF1C8F3127008744CE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -65,6 +74,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D403A0E51CAB1A5E00CF5909 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				D403A0E61CAB1A8000CF5909 /* HTTPManager.h */,
+				D403A0E71CAB1A8000CF5909 /* HTTPManager.m */,
+				D403A0E91CAB1B6000CF5909 /* TravelSafetyAPI.h */,
+				D403A0EA1CAB1B6000CF5909 /* TravelSafetyAPI.m */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		D403A0F01CAB1D3C00CF5909 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D403A0EC1CAB1D1900CF5909 /* Feedback.h */,
+				D403A0ED1CAB1D1900CF5909 /* Feedback.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		D42B7CC01C8F3127008744CE = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +115,8 @@
 		D42B7CCB1C8F3127008744CE /* Travel Safety */ = {
 			isa = PBXGroup;
 			children = (
+				D403A0F01CAB1D3C00CF5909 /* Models */,
+				D403A0E51CAB1A5E00CF5909 /* Managers */,
 				D4CC604C1C9022D500D114E4 /* Cells */,
 				D4CC603B1C8F80E200D114E4 /* Modals */,
 				D4CC603A1C8F7FF400D114E4 /* Views */,
@@ -294,11 +325,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D42B7CE81C8F3530008744CE /* MapViewController.m in Sources */,
+				D403A0EE1CAB1D1900CF5909 /* Feedback.m in Sources */,
 				D42B7CD11C8F3127008744CE /* AppDelegate.m in Sources */,
+				D403A0EB1CAB1B6000CF5909 /* TravelSafetyAPI.m in Sources */,
 				D4CC60501C9022FF00D114E4 /* ReviewMiniCell.m in Sources */,
 				D4CC60461C8F836000D114E4 /* ModalViewController.m in Sources */,
 				D4CC60391C8F7FBD00D114E4 /* ModalView.m in Sources */,
 				D4CC604A1C8F892600D114E4 /* AddFeedbackViewController.m in Sources */,
+				D403A0E81CAB1A8000CF5909 /* HTTPManager.m in Sources */,
 				D4CC60421C8F810C00D114E4 /* InfoViewController.m in Sources */,
 				D42B7CCE1C8F3127008744CE /* main.m in Sources */,
 			);
