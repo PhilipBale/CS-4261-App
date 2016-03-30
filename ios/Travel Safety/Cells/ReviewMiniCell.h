@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface ReviewMiniCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *reviewNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *reviewRightLabel;
+@property (weak, nonatomic) IBOutlet UITextView *reviewText;
 
 @end

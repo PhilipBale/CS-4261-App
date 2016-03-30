@@ -16,6 +16,6 @@
 
 + (void)postFeedback:(NSInteger)safety cleanliness:(NSInteger)cleanliness comfort:(NSInteger)comfort info:(NSString *)info recommend:(NSInteger)recommend completion:(void (^)(BOOL))completion;
 
-+ (void)fetchFeedbackWithCompletion:(void (^)(BOOL))completion;
++ (void)fetchFeedbackWithCompletion:(void (^)(BOOL success, NSArray *feedback))completion;
 
 @end

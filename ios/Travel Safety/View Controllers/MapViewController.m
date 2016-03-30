@@ -8,6 +8,7 @@
 
 #import "MapViewController.h"
 #import <CoreLocation/CoreLocation.h>
+#import "TravelSafetyAPI.h"
 
 @interface MapViewController ()<CLLocationManagerDelegate>
 {
@@ -15,7 +16,7 @@
 }
 
 @property (nonatomic, strong) GMSPlace *currentPlace;
-@property (nonatomic,strong) CLLocationManager *locationManager;
+@property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic) CLLocationCoordinate2D currentLocation;
 
 @end
@@ -55,10 +56,36 @@
     self.heatMapView.hidden = YES;
     
     [self.modalContainerView setAlpha:0];
+ 
+    
+    CLLocationCoordinate2D metz = CLLocationCoordinate2DMake(49.102203, 6.215220);
+    
+    [[GMSGeocoder geocoder] reverseGeocodeCoordinate:metz completionHandler:^(GMSReverseGeocodeResponse * _Nullable response, NSError * _Nullable error) {
+        return;
+        for(GMSAddress* addressObj in [response results])
+        {
+            NSLog(@"coordinate.latitude=%f", addressObj.coordinate.latitude);
+            NSLog(@"coordinate.longitude=%f", addressObj.coordinate.longitude);
+            NSLog(@"thoroughfare=%@", addressObj.thoroughfare);
+            NSLog(@"locality=%@", addressObj.locality);
+            NSLog(@"subLocality=%@", addressObj.subLocality);
+            NSLog(@"administrativeArea=%@", addressObj.administrativeArea);
+            NSLog(@"postalCode=%@", addressObj.postalCode);
+            NSLog(@"country=%@", addressObj.country);
+            NSLog(@"lines=%@", addressObj.lines);
+        }
+    }];
+    
+    
+    //self.currentPlace = [GMSPlace new];
+    //self.currentPlace.formattedAddress =
+    GMSCameraUpdate *updatedCamera = [GMSCameraUpdate setTarget:metz zoom:12];
+    [self.mapView animateWithCameraUpdate:updatedCamera];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
+    [self.locationManager stopUpdatingLocation];
     CLLocation *location = [locations lastObject];
     self.currentLocation = location.coordinate;
     
@@ -83,6 +110,8 @@
     // Do something with the selected place.
     NSLog(@"Place name %@", place.name);
     NSLog(@"Place address %@", place.formattedAddress);
+    NSLog(@"Place lat: %f", place.coordinate.latitude);
+    NSLog(@"Place long: %f", place.coordinate.longitude);
     NSLog(@"Place attributions %@", place.attributions.string);
     
     GMSCameraUpdate *updatedCamera = [GMSCameraUpdate setTarget:place.coordinate zoom:12];
@@ -141,6 +170,7 @@ didFailAutocompleteWithError:(NSError *)error {
     
     
     [infoController.view setFrame:self.modalContainerView.frame];
+    
     [self.view addSubview:infoController.view];
     [infoController didMoveToParentViewController:self];
 }

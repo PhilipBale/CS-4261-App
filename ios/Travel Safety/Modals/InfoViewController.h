@@ -18,5 +18,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *feedbackTable;
 
 @property (nonatomic, strong) GMSPlace *currentPlace;
+@property (nonatomic, strong) NSArray *feedbackArray;
 
 @end

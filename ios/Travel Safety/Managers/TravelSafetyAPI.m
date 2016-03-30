@@ -28,9 +28,26 @@
     
 }
 
-+ (void)fetchFeedbackWithCompletion:(void (^)(BOOL))completion
++ (void)fetchFeedbackWithCompletion:(void (^)(BOOL success, NSArray *feedback))completion
 {
-    
+    [[HTTPManager sharedManager] GET:kApiFetchFeedbackPath parameters:nil success:^(NSDictionary *responseObject)
+     {
+         NSDictionary *results = [responseObject objectForKey:@"feedback"];
+         
+         NSMutableArray *feedback = [[NSMutableArray alloc] init];
+         
+         for (NSDictionary *result in results)
+         {
+             
+             Feedback *resultFeedback = [Feedback feedbackFromDictionary:result];
+             
+             [feedback addObject:resultFeedback];
+         }
+         
+         if (completion) completion(YES, feedback);
+     } failure:^(NSError *error) {
+         if (completion) completion(NO, nil);
+     }];
 }
 
 
