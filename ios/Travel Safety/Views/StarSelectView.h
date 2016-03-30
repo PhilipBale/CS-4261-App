@@ -20,4 +20,10 @@
 
 @property NSInteger currentValue;
 
+- (IBAction)star1Touched:(id)sender;
+- (IBAction)star2Touched:(id)sender;
+- (IBAction)star3Touched:(id)sender;
+- (IBAction)star4Touched:(id)sender;
+- (IBAction)star5Touched:(id)sender;
+
 @end

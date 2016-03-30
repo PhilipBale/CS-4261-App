@@ -13,7 +13,7 @@
 #if TARGET_IPHONE_SIMULATOR
 #define BASE_API_URL @"http:localhost:3005"
 #else
-#define BASE_API_URL @"http://www.idk.com"
+#define BASE_API_URL @"https://travelsafety.herokuapp.com/"
 #endif
 
 #define API_VERSION @"1"
