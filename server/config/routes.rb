@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       get '/', to: 'api#index'
       post 'post_feedback', to: 'feedback#post_feedback'
       get 'fetch_feedback', to: 'feedback#fetch_feedback'
+      get 'login_user', to: 'user#login_user'
     end
   end
 

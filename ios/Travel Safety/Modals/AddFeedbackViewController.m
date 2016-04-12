@@ -31,10 +31,9 @@
 }
 
 - (IBAction)submitButtonPressed:(id)sender {
-    NSLog(@"Recommend slider value: %f", [self.recommendSlider value]);
-    NSLog(@"Safety stars: %li", [self.safetyStars currentValue]);
+    NSLog(@"Safeth slider value: %f", [self.safetySlider value]);
     
-    [TravelSafetyAPI postFeedback:[self.safetyStars currentValue] cleanliness:[self.cleanlinessStars currentValue] comfort:[self.comfortStars currentValue] info:self.infoTextView.text recommend:[self.recommendSlider value] completion:^(BOOL success) {
+    [TravelSafetyAPI postFeedbackWithName:@"" safety:[self.safetySlider value] cleanliness:[self.cleanlinessStars currentValue] comfort:[self.comfortStars currentValue] friendliness:[self.friendlinessStars currentValue] beauty:[self.beautyStars currentValue] transportation:[self.transportationStars currentValue] info:self.infoTextView.text completion:^(BOOL success) {
         if (success) {
             [self exitButtonPressed];
         }

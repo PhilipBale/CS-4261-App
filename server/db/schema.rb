@@ -11,17 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160329192754) do
+ActiveRecord::Schema.define(version: 20160412220928) do
 
   create_table "feedbacks", force: :cascade do |t|
     t.integer  "user_id"
+    t.string   "name"
     t.integer  "safety"
     t.integer  "cleanliness"
     t.integer  "comfort"
+    t.integer  "friendliness"
+    t.integer  "beauty"
+    t.integer  "transportation"
     t.string   "info"
-    t.integer  "recommend"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "password"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

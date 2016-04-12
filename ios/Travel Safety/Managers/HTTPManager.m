@@ -22,7 +22,7 @@
 #define kAPIAttempts 3
 #define kAPIAttemptDelay 1.50
 
-NSString * const kApiLoginOrRegisterPath = API_PATH(login_or_register_user);
+NSString * const kApiLoginPath = API_PATH(login_user);
 NSString * const kApiLoginWithTokenPath = API_PATH(login_with_token);
 NSString * const kApiFetchFeedbackPath = API_PATH(fetch_feedback);
 NSString * const kApiPostFeedbackPath = API_PATH(post_feedback);

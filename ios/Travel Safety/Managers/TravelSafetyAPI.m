@@ -12,11 +12,27 @@
 @implementation TravelSafetyAPI
 
 
++ (void)loginWithEmail:(NSString *)email password:(NSString *)password name:(NSString *)name completion:(void (^)(BOOL success, User *user))completion
+{
+    NSDictionary *params = @{};
+    
+    [[HTTPManager sharedManager] GET:kApiLoginPath parameters:params success:^(NSDictionary *responseObject)
+     {
+         NSDictionary *result = [responseObject objectForKey:@"user"];
+         
+         
+         User *resultUser = [User userFromDictionary:result];
+         
+         if (completion) completion(YES, resultUser);
+     } failure:^(NSError *error) {
+         if (completion) completion(NO, nil);
+     }];
+}
 
-+ (void)postFeedback:(NSInteger)safety cleanliness:(NSInteger)cleanliness comfort:(NSInteger)comfort info:(NSString *)info recommend:(NSInteger)recommend completion:(void (^)(BOOL))completion
++ (void)postFeedbackWithName:(NSString *)name safety:(NSInteger)safety cleanliness:(NSInteger)cleanliness comfort:(NSInteger)comfort friendliness:(NSInteger)friendliness beauty:(NSInteger)beauty transportation:(NSInteger)transportation info:(NSString *)info completion:(void (^)(BOOL))completion
 {
     
-    NSDictionary *params = @{@"feedback":@{@"safety":@(safety), @"cleanliness":@(cleanliness),@"comfort":@(comfort),@"info":info, @"recommend":@(recommend)}};
+    NSDictionary *params = @{@"feedback":@{@"name":name, @"safety":@(safety), @"cleanliness":@(cleanliness),@"comfort":@(comfort),@"friendliness":@(friendliness),@"beauty":@(beauty),@"transportation":@(transportation),@"info":info}};
     [[HTTPManager sharedManager] POST:kApiPostFeedbackPath parameters:params success:^(NSDictionary *responseObject)
      {
          NSLog(@"Failed parse persisted");

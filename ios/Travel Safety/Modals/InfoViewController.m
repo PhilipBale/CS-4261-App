@@ -43,6 +43,33 @@
 - (void)refreshUIFromFeedback
 {
     [self.feedbackTable reloadData];
+    NSInteger total = 0;
+    NSInteger positive = 0;
+    
+    for (Feedback *feedbackItem in self.feedbackArray)
+    {
+        NSInteger subTotal = feedbackItem.safety + feedbackItem.cleanliness + feedbackItem.comfort;
+        if (subTotal / 3 > 2) {
+            positive++;
+        }
+        total += feedbackItem.safety + feedbackItem.cleanliness + feedbackItem.comfort;
+    }
+    
+    total = total / (3 * [self.feedbackArray count]);
+    
+    if (total == 1) {
+        [self.starSelectView star1Touched:self];
+    } else if (total == 2) {
+        [self.starSelectView star2Touched:self];
+    } else if (total == 3) {
+        [self.starSelectView star3Touched:self];
+    } else if (total == 4) {
+        [self.starSelectView star4Touched:self];
+    } else if (total == 5) {
+        [self.starSelectView star5Touched:self];
+    }
+    
+    self.recommendLabel.text = [NSString stringWithFormat:@"%li of %li people recommend", positive, [self.feedbackArray count]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,7 +93,10 @@
     
     Feedback *feedback = [self.feedbackArray objectAtIndex:indexPath.row];
     cell.reviewNameLabel.text = @"Tom Agger";
-    
+    if (feedback.uuid >= 3) {
+        cell.reviewNameLabel.text = @"Samia Belhadj";
+    }
+
     NSNumber *total = [NSNumber numberWithDouble:(feedback.safety + feedback.cleanliness + feedback.comfort) / 3.0];
     cell.reviewRightLabel.text = [NSString stringWithFormat:@"%.1f/5", [total floatValue]];
     cell.reviewText.text = feedback.info;

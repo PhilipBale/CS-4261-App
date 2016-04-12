@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "AFHTTPRequestOperationManager.h"
 
-extern NSString * const kApiLoginOrRegisterPath;
+extern NSString * const kApiLoginPath;
 extern NSString * const kApiLoginWithTokenPath;
 extern NSString * const kApiFetchFeedbackPath;
 extern NSString * const kApiPostFeedbackPath;

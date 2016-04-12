@@ -19,6 +19,7 @@
 		D42B7CD91C8F3127008744CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D42B7CD81C8F3127008744CE /* Assets.xcassets */; };
 		D42B7CDC1C8F3127008744CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D42B7CDA1C8F3127008744CE /* LaunchScreen.storyboard */; };
 		D42B7CE81C8F3530008744CE /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D42B7CE71C8F3530008744CE /* MapViewController.m */; };
+		D45E27891CBDAFFB00F47320 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = D45E27881CBDAFFB00F47320 /* User.m */; };
 		D4CC60391C8F7FBD00D114E4 /* ModalView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4CC60381C8F7FBD00D114E4 /* ModalView.m */; };
 		D4CC60421C8F810C00D114E4 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4CC60401C8F810C00D114E4 /* InfoViewController.m */; };
 		D4CC60431C8F810C00D114E4 /* InfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4CC60411C8F810C00D114E4 /* InfoViewController.xib */; };
@@ -52,6 +53,8 @@
 		D42B7CDD1C8F3127008744CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D42B7CE61C8F3530008744CE /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapViewController.h; path = "View Controllers/MapViewController.h"; sourceTree = "<group>"; };
 		D42B7CE71C8F3530008744CE /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapViewController.m; path = "View Controllers/MapViewController.m"; sourceTree = "<group>"; };
+		D45E27871CBDAFFB00F47320 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Models/User.h; sourceTree = "<group>"; };
+		D45E27881CBDAFFB00F47320 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Models/User.m; sourceTree = "<group>"; };
 		D4CC60371C8F7FBD00D114E4 /* ModalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModalView.h; path = Views/ModalView.h; sourceTree = "<group>"; };
 		D4CC60381C8F7FBD00D114E4 /* ModalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModalView.m; path = Views/ModalView.m; sourceTree = "<group>"; };
 		D4CC603F1C8F810C00D114E4 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InfoViewController.h; path = Modals/InfoViewController.h; sourceTree = "<group>"; };
@@ -95,6 +98,8 @@
 			children = (
 				D403A0EC1CAB1D1900CF5909 /* Feedback.h */,
 				D403A0ED1CAB1D1900CF5909 /* Feedback.m */,
+				D45E27871CBDAFFB00F47320 /* User.h */,
+				D45E27881CBDAFFB00F47320 /* User.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -333,6 +338,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D45E27891CBDAFFB00F47320 /* User.m in Sources */,
 				D42B7CE81C8F3530008744CE /* MapViewController.m in Sources */,
 				D403A0EE1CAB1D1900CF5909 /* Feedback.m in Sources */,
 				D42B7CD11C8F3127008744CE /* AppDelegate.m in Sources */,
