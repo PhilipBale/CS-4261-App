@@ -29,10 +29,19 @@
     }
     
     self.feedbackArray = [[NSArray alloc] init];
+    self.toDisplayArray = [[NSMutableArray alloc] init];
     
     [TravelSafetyAPI fetchFeedbackWithCompletion:^(BOOL success, NSArray *feedback) {
         if (success) {
             self.feedbackArray = feedback;
+            for (Feedback *feedback in self.feedbackArray)
+            {
+                if ([[feedback info] length] > 0)
+                {
+                    [self.toDisplayArray addObject:feedback];
+                }
+            }
+            
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self refreshUIFromFeedback];
             });
@@ -48,14 +57,14 @@
     
     for (Feedback *feedbackItem in self.feedbackArray)
     {
-        NSInteger subTotal = feedbackItem.safety + feedbackItem.cleanliness + feedbackItem.comfort;
-        if (subTotal / 3 > 2) {
+        NSInteger subTotal = feedbackItem.cleanliness + feedbackItem.comfort + feedbackItem.friendliness + feedbackItem.beauty + feedbackItem.transportation;
+        if (subTotal / 5 > 2) {
             positive++;
         }
         total += feedbackItem.safety + feedbackItem.cleanliness + feedbackItem.comfort;
     }
     
-    total = total / (3 * [self.feedbackArray count]);
+    total = total / (5 * [self.feedbackArray count]);
     
     if (total == 1) {
         [self.starSelectView star1Touched:self];
@@ -79,7 +88,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.feedbackArray count];
+    return [self.toDisplayArray count];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -91,13 +100,10 @@
         cell = [tableView dequeueReusableCellWithIdentifier:@"ReviewMiniCell"];
     }
     
-    Feedback *feedback = [self.feedbackArray objectAtIndex:indexPath.row];
-    cell.reviewNameLabel.text = @"Tom Agger";
-    if (feedback.uuid >= 3) {
-        cell.reviewNameLabel.text = @"Samia Belhadj";
-    }
+    Feedback *feedback = [self.toDisplayArray objectAtIndex:indexPath.row];
+    cell.reviewNameLabel.text = [feedback.user fullName];
 
-    NSNumber *total = [NSNumber numberWithDouble:(feedback.safety + feedback.cleanliness + feedback.comfort) / 3.0];
+    NSNumber *total = [NSNumber numberWithDouble:(feedback.cleanliness + feedback.comfort + feedback.friendliness + feedback.beauty + feedback.transportation) / 5.0];
     cell.reviewRightLabel.text = [NSString stringWithFormat:@"%.1f/5", [total floatValue]];
     cell.reviewText.text = feedback.info;
     
@@ -107,7 +113,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 150;
+    return 120;
 }
 
 /*

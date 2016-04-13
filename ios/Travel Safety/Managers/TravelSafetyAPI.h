@@ -14,7 +14,7 @@
 
 + (void)loginWithEmail:(NSString *)email password:(NSString *)password name:(NSString *)name completion:(void (^)(BOOL success, User *user))completion;
 
-+ (void)postFeedbackWithName:(NSString *)name safety:(NSInteger)safety cleanliness:(NSInteger)cleanliness comfort:(NSInteger)comfort friendliness:(NSInteger)friendliness beauty:(NSInteger)beauty transportation:(NSInteger)transportation info:(NSString *)info completion:(void (^)(BOOL))completion;
++ (void)postFeedbackWithName:(NSString *)name safety:(NSInteger)safety cleanliness:(NSInteger)cleanliness comfort:(NSInteger)comfort friendliness:(NSInteger)friendliness beauty:(NSInteger)beauty transportation:(NSInteger)transportation latitude:(NSNumber *)latitude longitude:(NSNumber *)longitude info:(NSString *)info completion:(void (^)(BOOL))completion;
 
 + (void)fetchFeedbackWithCompletion:(void (^)(BOOL success, NSArray *feedback))completion;
 

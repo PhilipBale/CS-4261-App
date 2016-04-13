@@ -10,6 +10,12 @@
 
 @implementation User
 
+
+- (NSString *)fullName
+{
+    return [NSString stringWithFormat:@"%@ %@", self.firstName, self.lastName];
+}
+
 + (User *)userFromDictionary:(NSDictionary *)dictionary
 {
     User *user = [[User alloc] init];

@@ -11,7 +11,7 @@
 #import "InfoViewController.h"
 #import "AddFeedbackViewController.h"
 
-@interface MapViewController : UIViewController<GMSAutocompleteResultsViewControllerDelegate, ModalViewControllerDelegate>
+@interface MapViewController : UIViewController<GMSAutocompleteResultsViewControllerDelegate, ModalViewControllerDelegate, GMSMapViewDelegate>
 
 @property (weak, nonatomic) IBOutlet GMSMapView *mapView;
 
@@ -25,5 +25,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *leftActionButton;
 @property (weak, nonatomic) IBOutlet UIButton *rightActionButton;
 @property (weak, nonatomic) IBOutlet UIView *heatMapView;
+
+@property (nonatomic, strong) NSArray *feedbackArray;
+@property (nonatomic, strong) NSMutableArray *toDisplayArray;
 
 @end

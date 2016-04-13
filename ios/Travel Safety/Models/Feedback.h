@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "User.h"
 
 @interface Feedback : NSObject
 
@@ -20,7 +21,15 @@
 @property NSInteger beauty;
 @property NSInteger transportation;
 @property NSString *info;
+@property NSNumber *latitude;
+@property NSNumber *longitude;
 @property NSString *createdAt;
+
+@property (nonatomic, strong) User *user;
+
+
+-(NSNumber *)average;
+-(BOOL)safe;
 
 + (Feedback *)feedbackFromDictionary:(NSDictionary *)dictionary;
 

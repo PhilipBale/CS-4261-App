@@ -22,5 +22,6 @@
 
 @property (nonatomic, strong) GMSPlace *currentPlace;
 @property (nonatomic, strong) NSArray *feedbackArray;
+@property (nonatomic, strong) NSMutableArray *toDisplayArray;
 
 @end

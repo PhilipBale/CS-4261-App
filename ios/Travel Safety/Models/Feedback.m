@@ -10,6 +10,16 @@
 
 @implementation Feedback
 
+-(NSNumber *)average
+{
+    return [NSNumber numberWithDouble:(self.cleanliness + self.comfort + self.friendliness + self.beauty + self.transportation) / 5.0];
+}
+
+-(BOOL)safe
+{
+    return [self.average doubleValue] >= 2.5;
+}
+
 + (Feedback *)feedbackFromDictionary:(NSDictionary *)dictionary
 {
     Feedback *feedback = [[Feedback alloc] init];
@@ -22,7 +32,10 @@
     feedback.beauty = [[dictionary objectForKey:@"beauty"] integerValue];
     feedback.transportation = [[dictionary objectForKey:@"transportation"] integerValue];
     feedback.info = [dictionary objectForKey:@"info"];
+    feedback.latitude = [dictionary objectForKey:@"latitude"];
+    feedback.longitude = [dictionary objectForKey:@"longitude"];
     feedback.createdAt = [dictionary objectForKey:@"created_at"];
+    feedback.user = [User userFromDictionary:[dictionary objectForKey:@"user"]];
     return feedback;
 }
 

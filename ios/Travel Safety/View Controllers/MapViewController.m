@@ -81,6 +81,9 @@
     //self.currentPlace.formattedAddress =
     GMSCameraUpdate *updatedCamera = [GMSCameraUpdate setTarget:metz zoom:12];
     [self.mapView animateWithCameraUpdate:updatedCamera];
+    self.mapView.delegate = self;
+    
+    [self updateMapData];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
@@ -117,12 +120,19 @@
     GMSCameraUpdate *updatedCamera = [GMSCameraUpdate setTarget:place.coordinate zoom:12];
     [self.mapView animateWithCameraUpdate:updatedCamera];
     
-    if ([place.name containsString:@"Metz"]) {
+    
+    [self changeHeatMapColorForSafety:[place.name containsString:@"Metz"]];
+
+    self.heatMapView.hidden = NO;
+}
+
+-(void)changeHeatMapColorForSafety:(BOOL)safe
+{
+    if (safe) {
         self.heatMapView.backgroundColor = [[UIColor greenColor] colorWithAlphaComponent:.5];
     } else {
         self.heatMapView.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:.5];
     }
-    self.heatMapView.hidden = NO;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -132,6 +142,59 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         _searchController.searchBar.frame = self.searchBarContainer.bounds;
     });
+}
+
+- (void)updateMapData
+{
+    [TravelSafetyAPI fetchFeedbackWithCompletion:^(BOOL success, NSArray *feedback) {
+        if (success) {
+            self.feedbackArray = feedback;
+            for (Feedback *feedback in self.feedbackArray)
+            {
+                if ([[feedback info] length] > 0)
+                {
+                    [self.toDisplayArray addObject:feedback];
+                }
+            }
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self refreshUIFromFeedback];
+            });
+        }
+    }];
+}
+
+- (void)refreshUIFromFeedback
+{
+    [self.mapView clear];
+    for (Feedback *feedback in self.feedbackArray)
+    {
+        CLLocationCoordinate2D position = CLLocationCoordinate2DMake([feedback.latitude doubleValue], [feedback.longitude doubleValue]);
+        GMSMarker *marker = [GMSMarker markerWithPosition:position];
+        marker.title = feedback.user.firstName;
+        if ([feedback.info length] > 0) {
+            marker.snippet = [NSString stringWithFormat:@"%@/5\n%@", feedback.average, feedback.info];
+        } else {
+            marker.snippet = [NSString stringWithFormat:@"%@/5\n", feedback.average];
+        }
+        marker.map = self.mapView;
+    }
+}
+
+-(BOOL)mapView:(GMSMapView *)mapView didTapMarker:(GMSMarker *)marker {
+    [mapView animateToLocation:marker.position];
+    
+    for (Feedback *feedback in self.feedbackArray)
+    {
+        if ([feedback.longitude doubleValue] == marker.position.longitude && [feedback.latitude doubleValue] == marker.position.latitude)
+        {
+            [self changeHeatMapColorForSafety:[feedback safe]];
+        }
+    }
+    
+    [self.mapView setSelectedMarker:marker];
+    
+    return YES;
 }
 
 
@@ -211,8 +274,10 @@ didFailAutocompleteWithError:(NSError *)error {
     [self presentViewController:alert animated:YES completion:nil];
 }
 
+
 -(void)exitRequested:(ModalViewController *)controller
 {
+    [self updateMapData];
     [controller.view removeFromSuperview];
 }
 /*

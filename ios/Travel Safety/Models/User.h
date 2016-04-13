@@ -16,7 +16,10 @@
 @property NSString *email;
 @property NSString *password;
 
+- (NSString *)fullName;
+
 + (User *)userFromDictionary:(NSDictionary *)dictionary;
+
 
 
 @end
