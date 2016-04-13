@@ -9,10 +9,12 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InfoViewController">
             <connections>
                 <outlet property="cityName" destination="ytP-dz-D4J" id="JwI-id-wxr"/>
+                <outlet property="crimeIndexLabel" destination="HTS-hN-gkB" id="T8l-0a-UMr"/>
                 <outlet property="feedbackTable" destination="Ast-om-Y9n" id="B2p-gP-D8y"/>
                 <outlet property="miniReviewTableView" destination="Ast-om-Y9n" id="haf-2P-BsH"/>
                 <outlet property="recommendLabel" destination="e9J-R1-UES" id="Ymy-VI-kSn"/>
                 <outlet property="starSelectView" destination="rM1-rS-Vxv" id="6Xu-MQ-ugb"/>
+                <outlet property="touristSafetyIndexLabel" destination="xMa-GM-PSk" id="OFF-To-A2W"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

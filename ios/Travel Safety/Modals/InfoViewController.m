@@ -34,6 +34,16 @@
     self.feedbackArray = [[NSArray alloc] init];
     self.toDisplayArray = [[NSMutableArray alloc] init];
     
+    if ([self.cityName.text containsString:@"Metz"] || [self.currentPlace.formattedAddress containsString:@"Metz"])
+    {
+        [self.touristSafetyIndexLabel setText:@"Tourist Safety Index: 82/100"];
+        [self.crimeIndexLabel setText:@"Crime Index: 29/100"];
+        return;
+    } else {
+        [self.touristSafetyIndexLabel setText:@"Tourist Safety Index: 63/100"];
+        [self.crimeIndexLabel setText:@"Crime Index: 41/100"];
+    }
+    
     [TravelSafetyAPI fetchFeedbackWithCompletion:^(BOOL success, NSArray *feedback) {
         if (success) {
             self.feedbackArray = feedback;

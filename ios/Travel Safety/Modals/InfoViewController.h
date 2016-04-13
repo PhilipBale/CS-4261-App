@@ -24,4 +24,7 @@
 @property (nonatomic, strong) NSArray *feedbackArray;
 @property (nonatomic, strong) NSMutableArray *toDisplayArray;
 
+@property (weak, nonatomic) IBOutlet UILabel *touristSafetyIndexLabel;
+@property (weak, nonatomic) IBOutlet UILabel *crimeIndexLabel;
+
 @end
