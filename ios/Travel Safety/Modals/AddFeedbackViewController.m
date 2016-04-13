@@ -19,7 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    [self.cityLabel setText:self.currentPlace.formattedAddress];
+    [self.cityLabel setText:self.currentPlace.name];
     if (self.cityLabel.text == nil) {
         self.cityLabel.text = @"Metz, France";
     }

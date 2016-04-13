@@ -1,60 +1,64 @@
 //
-//  InfoViewController.m
+//  ProfileViewController.m
 //  Travel Safety
 //
-//  Created by Philip Bale on 3/8/16.
+//  Created by Philip Bale on 4/13/16.
 //  Copyright © 2016 Philip Bale. All rights reserved.
 //
 
-#import "InfoViewController.h"
+#import "ProfileViewController.h"
+#import "TravelSafetyApi.h"
 #import "ReviewMiniCell.h"
-#import "TravelSafetyAPI.h"
-#import "Feedback.h"
 
-@interface InfoViewController ()
+@interface ProfileViewController ()
 
 @end
 
-@implementation InfoViewController
+@implementation ProfileViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.miniReviewTableView.delegate = self;
     self.miniReviewTableView.dataSource = self;
-    // Do any additional setup after loading the view from its nib.
-    [self.cityName setText:self.currentPlace.formattedAddress];
-    if ([self.currentPlace.formattedAddress containsString:@"Atlanta"]) {
-        [self.cityName setText:@"Atlanta, GA"];
-    }
-    if (self.cityName.text == nil) {
-        self.cityName.text = @"Metz, France";
-    }
     
-    self.feedbackArray = [[NSArray alloc] init];
+    
+    self.feedbackArray = [[NSMutableArray alloc] init];
     self.toDisplayArray = [[NSMutableArray alloc] init];
     
-    [TravelSafetyAPI fetchFeedbackWithCompletion:^(BOOL success, NSArray *feedback) {
+    [TravelSafetyAPI fetchFeedbackWithCompletion:^(BOOL success, NSArray *feedbackRawArray) {
         if (success) {
-            self.feedbackArray = feedback;
-            for (Feedback *feedback in self.feedbackArray)
+            for (Feedback *feedback in feedbackRawArray)
             {
-                if ([[feedback info] length] > 0)
+                if ([[feedback user] uuid] == self.user.uuid)
                 {
-                    [self.toDisplayArray addObject:feedback];
+                    [self.feedbackArray addObject:feedback];
+                    
+                    if ([[feedback info] length] > 0)
+                    {
+                        [self.toDisplayArray addObject:feedback];
+                    }
                 }
             }
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self refreshUIFromFeedback];
+                [self.miniReviewTableView reloadData];
             });
         }
     }];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    self.nameLabel.text = [self.user fullName];
+    self.emailLabel.text = [self.user email];
+}
+
 - (void)refreshUIFromFeedback
 {
-    [self.feedbackTable reloadData];
     NSInteger total = 0;
     NSInteger positive = 0;
     
@@ -68,20 +72,9 @@
     }
     
     total = total / (5 * [self.feedbackArray count]);
+
     
-    if (total == 1) {
-        [self.starSelectView star1Touched:self];
-    } else if (total == 2) {
-        [self.starSelectView star2Touched:self];
-    } else if (total == 3) {
-        [self.starSelectView star3Touched:self];
-    } else if (total == 4) {
-        [self.starSelectView star4Touched:self];
-    } else if (total == 5) {
-        [self.starSelectView star5Touched:self];
-    }
-    
-    self.recommendLabel.text = [NSString stringWithFormat:@"%li of %li people recommend", positive, [self.feedbackArray count]];
+    self.reviewsLabel.text = [NSString stringWithFormat:@"%li/%li positive reviews", positive, [self.feedbackArray count]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -105,10 +98,10 @@
     
     Feedback *feedback = [self.toDisplayArray objectAtIndex:indexPath.row];
     cell.reviewNameLabel.text = [feedback.user fullName];
-
+    
     NSNumber *total = [NSNumber numberWithDouble:(feedback.cleanliness + feedback.comfort + feedback.friendliness + feedback.beauty + feedback.transportation) / 5.0];
     cell.reviewRightLabel.text = [NSString stringWithFormat:@"%.1f/5", [total floatValue]];
-    cell.reviewText.text = feedback.info;
+    cell.reviewText.text = [NSString stringWithFormat:@"%@\n\n(%@)",feedback.info, feedback.name];
     
     
     return cell;
@@ -119,14 +112,8 @@
     return 120;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)logoutButtonPressed:(id)sender {
+    NSLog(@"Logout button pressed!");
 }
-*/
 
 @end

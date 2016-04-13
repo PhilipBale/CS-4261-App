@@ -26,6 +26,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [TravelSafetyAPI loginWithEmail:@"" password:@"" name:@"" completion:^(BOOL success, User *user) {
+        if (success) {
+            self.user = user;
+        }
+    }];
+    
     if ([CLLocationManager locationServicesEnabled]) {
         self.locationManager = [[CLLocationManager alloc] init];
         self.locationManager.delegate = self;
@@ -221,6 +227,21 @@ didFailAutocompleteWithError:(NSError *)error {
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)profileButtonPressed:(id)sender {
+    NSLog(@"Profile button pressed");
+    ProfileViewController *profileController = [[ProfileViewController alloc] initWithNibName:@"ProfileViewController" bundle:nil];
+    
+    [profileController setUser:self.user];
+    
+    [self addChildViewController:profileController];
+    [profileController setDelegate:self];
+    
+    
+    [profileController.view setFrame:self.modalContainerView.frame];
+    
+    [self.view addSubview:profileController.view];
+    [profileController didMoveToParentViewController:self];
 }
 
 - (IBAction)leftButtonPressed:(id)sender {

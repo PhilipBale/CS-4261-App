@@ -10,10 +10,13 @@
 #import <GoogleMaps/GoogleMaps.h>
 #import "InfoViewController.h"
 #import "AddFeedbackViewController.h"
+#import "ProfileViewController.h"
 
 @interface MapViewController : UIViewController<GMSAutocompleteResultsViewControllerDelegate, ModalViewControllerDelegate, GMSMapViewDelegate>
 
 @property (weak, nonatomic) IBOutlet GMSMapView *mapView;
+
+@property (nonatomic, strong) User* user;
 
 @property (nonatomic, strong) GMSAutocompleteResultsViewController *resultsViewController;
 @property (nonatomic, strong) UISearchController *searchController;
