@@ -12,6 +12,8 @@
 
 -(void)awakeFromNib
 {
+    self.starsClickable = YES;
+    
     UIView *subview = [[[UINib nibWithNibName:@"StarSelectView" bundle:nil] instantiateWithOwner:self options:nil] objectAtIndex:0];
     [subview setFrame:self.bounds];
     [self addSubview:subview];
@@ -24,6 +26,8 @@
 }
 
 - (IBAction)star1Touched:(id)sender {
+    if (!self.starsClickable) return;
+    
     [self.star1 setBackgroundImage:self.goldStar forState:UIControlStateNormal];
     [self.star2 setBackgroundImage:self.greyStar forState:UIControlStateNormal];
     [self.star3 setBackgroundImage:self.greyStar forState:UIControlStateNormal];
@@ -33,6 +37,8 @@
     self.currentValue = 1;
 }
 - (IBAction)star2Touched:(id)sender {
+    if (!self.starsClickable) return;
+    
     [self.star1 setBackgroundImage:self.goldStar forState:UIControlStateNormal];
     [self.star2 setBackgroundImage:self.goldStar forState:UIControlStateNormal];
     [self.star3 setBackgroundImage:self.greyStar forState:UIControlStateNormal];
@@ -41,6 +47,8 @@
     self.currentValue = 2;
 }
 - (IBAction)star3Touched:(id)sender {
+    if (!self.starsClickable) return;
+    
     [self.star1 setBackgroundImage:self.goldStar forState:UIControlStateNormal];
     [self.star2 setBackgroundImage:self.goldStar forState:UIControlStateNormal];
     [self.star3 setBackgroundImage:self.goldStar forState:UIControlStateNormal];
@@ -49,6 +57,8 @@
     self.currentValue = 3;
 }
 - (IBAction)star4Touched:(id)sender {
+    if (!self.starsClickable) return;
+    
     [self.star1 setBackgroundImage:self.goldStar forState:UIControlStateNormal];
     [self.star2 setBackgroundImage:self.goldStar forState:UIControlStateNormal];
     [self.star3 setBackgroundImage:self.goldStar forState:UIControlStateNormal];
@@ -58,6 +68,8 @@
 }
 
 - (IBAction)star5Touched:(id)sender {
+    if (!self.starsClickable) return;
+    
     [self.star1 setBackgroundImage:self.goldStar forState:UIControlStateNormal];
     [self.star2 setBackgroundImage:self.goldStar forState:UIControlStateNormal];
     [self.star3 setBackgroundImage:self.goldStar forState:UIControlStateNormal];
@@ -65,13 +77,5 @@
     [self.star5 setBackgroundImage:self.goldStar forState:UIControlStateNormal];
     self.currentValue = 5;
 }
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
 
 @end

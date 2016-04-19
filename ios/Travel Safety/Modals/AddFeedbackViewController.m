@@ -33,7 +33,7 @@
 - (IBAction)submitButtonPressed:(id)sender {
     NSLog(@"Safeth slider value: %f", [self.safetySlider value]);
     
-    [TravelSafetyAPI postFeedbackWithName:self.currentPlace.name safety:[self.safetySlider value] cleanliness:[self.cleanlinessStars currentValue] comfort:[self.comfortStars currentValue] friendliness:[self.friendlinessStars currentValue] beauty:[self.beautyStars currentValue] transportation:[self.transportationStars currentValue] latitude:@(self.currentPlace.coordinate.latitude) longitude:@(self.currentPlace.coordinate.longitude) info:self.infoTextView.text completion:^(BOOL success) {
+    [TravelSafetyAPI postFeedbackWithName:self.currentPlace.name email:[self.currentUser email] safety:[self.safetySlider value] cleanliness:[self.cleanlinessStars currentValue] comfort:[self.comfortStars currentValue] friendliness:[self.friendlinessStars currentValue] beauty:[self.beautyStars currentValue] transportation:[self.transportationStars currentValue] latitude:@(self.currentPlace.coordinate.latitude) longitude:@(self.currentPlace.coordinate.longitude) info:self.infoTextView.text completion:^(BOOL success) {
         if (success) {
             [self exitButtonPressed];
         }

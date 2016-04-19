@@ -26,7 +26,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [TravelSafetyAPI loginWithEmail:@"" password:@"" name:@"" completion:^(BOOL success, User *user) {
+    NSString *email = self.usePhilip ? @"pbale95@gmail.com" : @"";
+    [TravelSafetyAPI loginWithEmail:email password:@"" name:@"" completion:^(BOOL success, User *user) {
         if (success) {
             self.user = user;
         }
@@ -262,6 +263,8 @@ didFailAutocompleteWithError:(NSError *)error {
     NSLog(@"Right button pressed");
     AddFeedbackViewController *addFeedbackViewController = [[AddFeedbackViewController alloc] initWithNibName:@"AddFeedbackViewController" bundle:nil];
     [addFeedbackViewController setCurrentPlace:self.currentPlace];
+    [addFeedbackViewController setCurrentUser:self.user];
+    
     [self addChildViewController:addFeedbackViewController];
     [addFeedbackViewController setDelegate:self];
     

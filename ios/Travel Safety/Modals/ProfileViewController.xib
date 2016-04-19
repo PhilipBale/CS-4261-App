@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -26,14 +26,14 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4/7 people recommend" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AtP-fc-zyR">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x/x positive reviews" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AtP-fc-zyR">
                     <rect key="frame" x="8" y="61.5" width="304" height="16"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kqt-BV-OvK">
-                    <rect key="frame" x="0.0" y="105" width="320" height="317"/>
+                    <rect key="frame" x="0.0" y="157" width="320" height="265"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3xf-sg-xIZ">
@@ -57,18 +57,35 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feedback" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lSa-bc-q0h">
-                    <rect key="frame" x="20" y="85.5" width="292" height="19.5"/>
+                    <rect key="frame" x="20" y="137.5" width="292" height="19.5"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJk-mG-PGS">
+                    <rect key="frame" x="30" y="87.5" width="260" height="40"/>
+                    <color key="backgroundColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Gcs-XW-AZW"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                    <state key="normal" title="Set Travel Plans">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="setTravelPlansButtonPressed:" destination="-1" eventType="touchUpInside" id="iY8-Bn-Wr6"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="Kqt-BV-OvK" secondAttribute="trailing" id="6Jb-Ka-UQa"/>
                 <constraint firstAttribute="trailing" secondItem="3E4-wz-opy" secondAttribute="trailing" id="90W-LN-0KJ"/>
                 <constraint firstItem="lSa-bc-q0h" firstAttribute="trailing" secondItem="AtP-fc-zyR" secondAttribute="trailing" id="BNo-kC-Tbp"/>
-                <constraint firstItem="lSa-bc-q0h" firstAttribute="top" secondItem="AtP-fc-zyR" secondAttribute="bottom" constant="8" id="FRG-vH-zvU"/>
+                <constraint firstItem="iJk-mG-PGS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="Duu-zd-lAc"/>
+                <constraint firstItem="lSa-bc-q0h" firstAttribute="top" secondItem="AtP-fc-zyR" secondAttribute="bottom" constant="80" id="FRG-vH-zvU"/>
+                <constraint firstItem="iJk-mG-PGS" firstAttribute="top" secondItem="AtP-fc-zyR" secondAttribute="bottom" constant="10" id="GUp-VV-kyT"/>
+                <constraint firstAttribute="trailing" secondItem="iJk-mG-PGS" secondAttribute="trailing" constant="30" id="KH0-T4-uXb"/>
                 <constraint firstAttribute="bottom" secondItem="3E4-wz-opy" secondAttribute="bottom" id="LZj-WH-MZf"/>
                 <constraint firstItem="j5m-sR-yuE" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="OR9-bw-KJm"/>
                 <constraint firstItem="AtP-fc-zyR" firstAttribute="leading" secondItem="3xf-sg-xIZ" secondAttribute="leading" id="Tz2-hG-FlW"/>
@@ -76,6 +93,7 @@
                 <constraint firstItem="lSa-bc-q0h" firstAttribute="leading" secondItem="AtP-fc-zyR" secondAttribute="leading" constant="12" id="YQW-7h-JQE"/>
                 <constraint firstItem="3xf-sg-xIZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="dBB-bE-gYq"/>
                 <constraint firstItem="Kqt-BV-OvK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="e0E-B5-YbN"/>
+                <constraint firstItem="lSa-bc-q0h" firstAttribute="top" secondItem="iJk-mG-PGS" secondAttribute="bottom" constant="10" id="fML-DQ-VeR"/>
                 <constraint firstItem="3xf-sg-xIZ" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="ggs-6g-NlL"/>
                 <constraint firstItem="Kqt-BV-OvK" firstAttribute="top" secondItem="lSa-bc-q0h" secondAttribute="bottom" id="gzR-d5-y0v"/>
                 <constraint firstItem="3E4-wz-opy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="md6-og-q3P"/>
@@ -87,6 +105,11 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="FRG-vH-zvU"/>
+                </mask>
+            </variation>
         </view>
     </objects>
 </document>

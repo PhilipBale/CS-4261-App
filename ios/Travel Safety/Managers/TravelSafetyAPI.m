@@ -14,7 +14,7 @@
 
 + (void)loginWithEmail:(NSString *)email password:(NSString *)password name:(NSString *)name completion:(void (^)(BOOL success, User *user))completion
 {
-    NSDictionary *params = @{};
+    NSDictionary *params = @{@"email": email};
     
     [[HTTPManager sharedManager] GET:kApiLoginPath parameters:params success:^(NSDictionary *responseObject)
      {
@@ -29,10 +29,10 @@
      }];
 }
 
-+ (void)postFeedbackWithName:(NSString *)name safety:(NSInteger)safety cleanliness:(NSInteger)cleanliness comfort:(NSInteger)comfort friendliness:(NSInteger)friendliness beauty:(NSInteger)beauty transportation:(NSInteger)transportation latitude:(NSNumber *)latitude longitude:(NSNumber *)longitude info:(NSString *)info completion:(void (^)(BOOL))completion
++ (void)postFeedbackWithName:(NSString *)name email:(NSString *)email safety:(NSInteger)safety cleanliness:(NSInteger)cleanliness comfort:(NSInteger)comfort friendliness:(NSInteger)friendliness beauty:(NSInteger)beauty transportation:(NSInteger)transportation latitude:(NSNumber *)latitude longitude:(NSNumber *)longitude info:(NSString *)info completion:(void (^)(BOOL))completion
 {
     
-    NSDictionary *params = @{@"feedback":@{@"name":name, @"safety":@(safety), @"cleanliness":@(cleanliness),@"comfort":@(comfort),@"friendliness":@(friendliness),@"beauty":@(beauty),@"transportation":@(transportation), @"latitude":latitude, @"longitude":longitude,@"info":info}};
+    NSDictionary *params = @{@"feedback":@{@"email":email, @"name":name, @"safety":@(safety), @"cleanliness":@(cleanliness),@"comfort":@(comfort),@"friendliness":@(friendliness),@"beauty":@(beauty),@"transportation":@(transportation), @"latitude":latitude, @"longitude":longitude,@"info":info}};
     [[HTTPManager sharedManager] POST:kApiPostFeedbackPath parameters:params success:^(NSDictionary *responseObject)
      {
          NSLog(@"Failed parse persisted");

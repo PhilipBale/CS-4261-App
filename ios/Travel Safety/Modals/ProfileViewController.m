@@ -9,8 +9,11 @@
 #import "ProfileViewController.h"
 #import "TravelSafetyApi.h"
 #import "ReviewMiniCell.h"
+#import "TravelPlansViewController.h"
 
-@interface ProfileViewController ()
+@interface ProfileViewController () <ModalViewControllerDelegate>
+
+@property (nonatomic, strong) TravelPlansViewController *travelPlansViewController;
 
 @end
 
@@ -62,6 +65,8 @@
     NSInteger total = 0;
     NSInteger positive = 0;
     
+    if ([self.feedbackArray count] == 0) return;
+    
     for (Feedback *feedbackItem in self.feedbackArray)
     {
         NSInteger subTotal = feedbackItem.cleanliness + feedbackItem.comfort + feedbackItem.friendliness + feedbackItem.beauty + feedbackItem.transportation;
@@ -110,6 +115,27 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 120;
+}
+
+- (IBAction)setTravelPlansButtonPressed:(id)sender {
+    NSLog(@"Set travel plans button pressed");
+    
+    NSLog(@"Left button pressed");
+    
+    self.travelPlansViewController = [[TravelPlansViewController alloc] initWithNibName:@"TravelPlansViewController" bundle:nil];
+    [self addChildViewController:self.travelPlansViewController];
+    [self.travelPlansViewController setDelegate:self];
+    
+    
+    [self.travelPlansViewController.view setFrame:self.view.bounds];
+    
+    [self.view addSubview:self.travelPlansViewController.view];
+    [self.travelPlansViewController didMoveToParentViewController:self];
+}
+
+-(void)exitRequested:(ModalViewController *)controller
+{
+    [self.travelPlansViewController.view removeFromSuperview];
 }
 
 - (IBAction)logoutButtonPressed:(id)sender {

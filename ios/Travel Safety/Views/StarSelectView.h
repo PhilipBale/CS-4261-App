@@ -26,4 +26,6 @@
 - (IBAction)star4Touched:(id)sender;
 - (IBAction)star5Touched:(id)sender;
 
+@property BOOL starsClickable;
+
 @end

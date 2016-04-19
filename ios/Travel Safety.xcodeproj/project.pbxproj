@@ -22,6 +22,9 @@
 		D45E27891CBDAFFB00F47320 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = D45E27881CBDAFFB00F47320 /* User.m */; };
 		D45E278D1CBE3A1800F47320 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D45E278B1CBE3A1800F47320 /* ProfileViewController.m */; };
 		D45E278E1CBE3A1800F47320 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D45E278C1CBE3A1800F47320 /* ProfileViewController.xib */; };
+		D4AD281F1CC62B6B0024EBF4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4AD281E1CC62B6B0024EBF4 /* LoginViewController.m */; };
+		D4AD28231CC634650024EBF4 /* TravelPlansViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4AD28211CC634650024EBF4 /* TravelPlansViewController.m */; };
+		D4AD28241CC634650024EBF4 /* TravelPlansViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4AD28221CC634650024EBF4 /* TravelPlansViewController.xib */; };
 		D4CC60391C8F7FBD00D114E4 /* ModalView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4CC60381C8F7FBD00D114E4 /* ModalView.m */; };
 		D4CC60421C8F810C00D114E4 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4CC60401C8F810C00D114E4 /* InfoViewController.m */; };
 		D4CC60431C8F810C00D114E4 /* InfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4CC60411C8F810C00D114E4 /* InfoViewController.xib */; };
@@ -60,6 +63,11 @@
 		D45E278A1CBE3A1800F47320 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileViewController.h; path = Modals/ProfileViewController.h; sourceTree = "<group>"; };
 		D45E278B1CBE3A1800F47320 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileViewController.m; path = Modals/ProfileViewController.m; sourceTree = "<group>"; };
 		D45E278C1CBE3A1800F47320 /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProfileViewController.xib; path = Modals/ProfileViewController.xib; sourceTree = "<group>"; };
+		D4AD281D1CC62B6B0024EBF4 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = "View Controllers/LoginViewController.h"; sourceTree = "<group>"; };
+		D4AD281E1CC62B6B0024EBF4 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = "View Controllers/LoginViewController.m"; sourceTree = "<group>"; };
+		D4AD28201CC634650024EBF4 /* TravelPlansViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TravelPlansViewController.h; path = Modals/TravelPlansViewController.h; sourceTree = "<group>"; };
+		D4AD28211CC634650024EBF4 /* TravelPlansViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TravelPlansViewController.m; path = Modals/TravelPlansViewController.m; sourceTree = "<group>"; };
+		D4AD28221CC634650024EBF4 /* TravelPlansViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TravelPlansViewController.xib; path = Modals/TravelPlansViewController.xib; sourceTree = "<group>"; };
 		D4CC60371C8F7FBD00D114E4 /* ModalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModalView.h; path = Views/ModalView.h; sourceTree = "<group>"; };
 		D4CC60381C8F7FBD00D114E4 /* ModalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModalView.m; path = Views/ModalView.m; sourceTree = "<group>"; };
 		D4CC603F1C8F810C00D114E4 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InfoViewController.h; path = Modals/InfoViewController.h; sourceTree = "<group>"; };
@@ -162,6 +170,8 @@
 				D42B7CE71C8F3530008744CE /* MapViewController.m */,
 				D4CC60441C8F836000D114E4 /* ModalViewController.h */,
 				D4CC60451C8F836000D114E4 /* ModalViewController.m */,
+				D4AD281D1CC62B6B0024EBF4 /* LoginViewController.h */,
+				D4AD281E1CC62B6B0024EBF4 /* LoginViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -190,6 +200,9 @@
 				D45E278A1CBE3A1800F47320 /* ProfileViewController.h */,
 				D45E278B1CBE3A1800F47320 /* ProfileViewController.m */,
 				D45E278C1CBE3A1800F47320 /* ProfileViewController.xib */,
+				D4AD28201CC634650024EBF4 /* TravelPlansViewController.h */,
+				D4AD28211CC634650024EBF4 /* TravelPlansViewController.m */,
+				D4AD28221CC634650024EBF4 /* TravelPlansViewController.xib */,
 			);
 			name = Modals;
 			sourceTree = "<group>";
@@ -281,6 +294,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4AD28241CC634650024EBF4 /* TravelPlansViewController.xib in Resources */,
 				D4CC604B1C8F892600D114E4 /* AddFeedbackViewController.xib in Resources */,
 				D42B7CDC1C8F3127008744CE /* LaunchScreen.storyboard in Resources */,
 				D45E278E1CBE3A1800F47320 /* ProfileViewController.xib in Resources */,
@@ -348,6 +362,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D45E27891CBDAFFB00F47320 /* User.m in Sources */,
+				D4AD28231CC634650024EBF4 /* TravelPlansViewController.m in Sources */,
 				D42B7CE81C8F3530008744CE /* MapViewController.m in Sources */,
 				D403A0EE1CAB1D1900CF5909 /* Feedback.m in Sources */,
 				D42B7CD11C8F3127008744CE /* AppDelegate.m in Sources */,
@@ -361,6 +376,7 @@
 				D403A0E81CAB1A8000CF5909 /* HTTPManager.m in Sources */,
 				D4CC60421C8F810C00D114E4 /* InfoViewController.m in Sources */,
 				D42B7CCE1C8F3127008744CE /* main.m in Sources */,
+				D4AD281F1CC62B6B0024EBF4 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,6 +490,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Travel Safety/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.logikcomputing.Travel-Safety";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -486,6 +503,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Travel Safety/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.logikcomputing.Travel-Safety";
 				PRODUCT_NAME = "$(TARGET_NAME)";

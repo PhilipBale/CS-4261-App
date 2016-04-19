@@ -31,6 +31,8 @@
         self.cityName.text = @"Metz, France";
     }
     
+    [self.starSelectView setStarsClickable:NO];
+    
     self.feedbackArray = [[NSArray alloc] init];
     self.toDisplayArray = [[NSMutableArray alloc] init];
     

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HmE-cc-WVb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HmE-cc-WVb">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -10,7 +10,7 @@
         <!--Login View Controller-->
         <scene sceneID="xcq-ti-5tO">
             <objects>
-                <viewController title="Login View Controller" id="HmE-cc-WVb" sceneMemberID="viewController">
+                <viewController title="Login View Controller" id="HmE-cc-WVb" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="i5u-FN-bYV"/>
                         <viewControllerLayoutGuide type="bottom" id="Cor-ZX-klK"/>
@@ -42,7 +42,7 @@
                                             <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" id="qZz-2c-orU"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="MapViewShow" id="qZz-2c-orU"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -75,6 +75,12 @@
                                     <constraint firstAttribute="width" secondItem="SGg-OP-f5E" secondAttribute="height" multiplier="224:179" id="zWt-nQ-GFR"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oZl-tV-sNN">
+                                <rect key="frame" x="0.0" y="20" width="320" height="104"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="MapViewShowPhilip" id="PFG-fs-ojr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -88,12 +94,16 @@
                             <constraint firstItem="Jus-w6-4qq" firstAttribute="centerX" secondItem="yF0-Rm-6EW" secondAttribute="centerX" id="OWt-Zw-h4v"/>
                             <constraint firstItem="gfR-7V-Xb8" firstAttribute="leading" secondItem="yF0-Rm-6EW" secondAttribute="leadingMargin" id="Q89-jg-Mej"/>
                             <constraint firstAttribute="trailing" secondItem="DEZ-CE-KkM" secondAttribute="trailing" id="RjH-ih-oy7"/>
+                            <constraint firstItem="SGg-OP-f5E" firstAttribute="top" secondItem="oZl-tV-sNN" secondAttribute="bottom" id="T8u-qh-1Bk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="WQu-Cc-H0V" secondAttribute="trailing" constant="50" id="U0r-mN-ZuV"/>
+                            <constraint firstAttribute="trailing" secondItem="oZl-tV-sNN" secondAttribute="trailing" id="ZM2-6w-96f"/>
                             <constraint firstAttribute="trailingMargin" secondItem="SGg-OP-f5E" secondAttribute="trailing" constant="90" id="eeG-mI-DG4"/>
                             <constraint firstItem="Jus-w6-4qq" firstAttribute="top" secondItem="SGg-OP-f5E" secondAttribute="bottom" constant="8" id="f4o-Ym-aLN"/>
+                            <constraint firstItem="oZl-tV-sNN" firstAttribute="top" secondItem="i5u-FN-bYV" secondAttribute="bottom" id="h8k-Lx-sgh"/>
                             <constraint firstItem="DEZ-CE-KkM" firstAttribute="top" secondItem="gfR-7V-Xb8" secondAttribute="bottom" constant="8" id="jux-Cc-6Ng"/>
                             <constraint firstItem="DEZ-CE-KkM" firstAttribute="leading" secondItem="yF0-Rm-6EW" secondAttribute="leading" id="s7Z-6r-oGN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gfR-7V-Xb8" secondAttribute="trailing" id="vIV-GV-nPn"/>
+                            <constraint firstItem="oZl-tV-sNN" firstAttribute="leading" secondItem="yF0-Rm-6EW" secondAttribute="leading" id="wfG-3e-cBE"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -263,4 +273,7 @@
         <image name="profile" width="300" height="300"/>
         <image name="safe_travels_no_background" width="112" height="89"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="PFG-fs-ojr"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -2,6 +2,7 @@ module ApplicationHelper
 
     def setup_app
         User.create(first_name: 'Samia', last_name: 'Belhadj', email: 'samia@gatech.edu', password: 'ffff')
+        User.create(first_name: 'Philip', last_name: 'Bale', email: 'pbale95@gmail.com', password: 'ffff')
 
         gtl_feedback = [['User 1',6,3,2,4,3,4, ''],
             ['User 2',3,3,3,4,3,4, ''],

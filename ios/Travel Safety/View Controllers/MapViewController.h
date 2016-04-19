@@ -16,6 +16,7 @@
 
 @property (weak, nonatomic) IBOutlet GMSMapView *mapView;
 
+@property (nonatomic) BOOL usePhilip;
 @property (nonatomic, strong) User* user;
 
 @property (nonatomic, strong) GMSAutocompleteResultsViewController *resultsViewController;

@@ -4,7 +4,15 @@ class Api::V1::FeedbackController < Api::V1::ApiController
     authenticate_request
     post_feedback_params
 
-    @user = User.first
+    email = params[:feedback][:email]
+
+    if email.present?
+      @user = User.where(email: email).first
+    end
+
+    if not @user.present?
+      @user = User.first
+    end
 
     new_feedback = Feedback.create(post_feedback_params)
     new_feedback.user_id = @user.id
@@ -34,7 +42,7 @@ class Api::V1::FeedbackController < Api::V1::ApiController
 
   private
   def post_feedback_params
-    params.require(:feedback).permit(:name, :safety, :cleanliness, :comfort, :friendliness, :beauty, :transportation, :latitude, :longitude, :info)
+    params.require(:feedback).permit(:email, :name, :safety, :cleanliness, :comfort, :friendliness, :beauty, :transportation, :latitude, :longitude, :info)
   end
 
 

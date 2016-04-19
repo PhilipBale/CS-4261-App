@@ -10,6 +10,7 @@
 #import <GoogleMaps/GoogleMaps.h>
 #import "ModalViewController.h"
 #import "StarSelectView.h"
+#import "User.h"
 
 @interface AddFeedbackViewController : ModalViewController
 @property (weak, nonatomic) IBOutlet UILabel *cityLabel;
@@ -23,5 +24,6 @@
 @property (weak, nonatomic) IBOutlet StarSelectView *transportationStars;
 
 @property (nonatomic, strong) GMSPlace *currentPlace;
+@property (nonatomic, strong) User *currentUser;
 
 @end
