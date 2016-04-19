@@ -5,6 +5,7 @@ class Api::V1::FeedbackController < Api::V1::ApiController
     post_feedback_params
 
     email = params[:feedback][:email]
+    params[:feedback].delete(:email)
 
     if email.present?
       @user = User.where(email: email).first
