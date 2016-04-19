@@ -21,7 +21,7 @@
 @property (weak, nonatomic) IBOutlet StarSelectView *starSelectView;
 
 @property (nonatomic, strong) GMSPlace *currentPlace;
-@property (nonatomic, strong) NSArray *feedbackArray;
+@property (nonatomic, strong) NSMutableArray *feedbackArray;
 @property (nonatomic, strong) NSMutableArray *toDisplayArray;
 
 @property (weak, nonatomic) IBOutlet UILabel *touristSafetyIndexLabel;

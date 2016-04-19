@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ExpertReviewViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" restorationIdentifier="ExpertReviewViewController" id="i5M-Pr-FkT" customClass="ModalView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expert Review" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ztD-1P-oxK">
+                    <rect key="frame" x="8" y="18" width="304" height="27"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDf-3G-rUs">
+                    <rect key="frame" x="8" y="53" width="304" height="419"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <mutableString key="text">Metz by Karen Pierce:
+
+Activities – the park Expo often has good/interesting events/BAM is a good new music venue and close to GTL.  La Trinitaire is a really cool music venue located in the city center in an old monastery.  la Chaouée is also a cool spot with kind of indy music, plays, other events.  One of the cool things one can do in France, in general, is to try to get invited to music events hosted in homes.  This is fairly common, but you have to know someone who knows someone.  I know no one :-/
+
+Very good museums…I like especially Centre Pompidou, Frace Lorraine (contemporary/edgy expositions and they serve a little snack and drink during and/or after the exhibit) and La Cour D’Or (history museum). 
+
+Favorite thing in Metz is to walk along the river during the spring and summer and take photos of the gorgeous flowers planted in the planters along the bridges.  The Landscape architect in Metz is a genius, in my opinion.
+ 
+Exercise caution:
+Metz is, in general, super safe.  Borny area is generally considered a place to avoid in the evenings, especially if you’re by yourself.  It’s fine during the day, but one might be hassled if walking around alone in the evening.  Honestly, I’ve not heard of this happening to anyone.  It’s what I’ve always heard my arrival five years ago.
+
+People
+People can be very reserved and they’re cautious about minding other peoples “business.” They keep their distance.  They don’t smile a lot, which is different from people in the U.S. south.  You meet a lot of nice people, though, and lots are interested in speaking English.  If you meet one of these people, you may have trouble practicing your French :-p</mutableString>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="eDf-3G-rUs" firstAttribute="top" secondItem="ztD-1P-oxK" secondAttribute="bottom" constant="8" id="3bf-pp-GQu"/>
+                <constraint firstItem="eDf-3G-rUs" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="8el-95-zM8"/>
+                <constraint firstItem="ztD-1P-oxK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="topMargin" constant="10" id="Dl7-Sk-fnF"/>
+                <constraint firstItem="ztD-1P-oxK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="HOI-2I-oe0"/>
+                <constraint firstAttribute="trailing" secondItem="ztD-1P-oxK" secondAttribute="trailing" id="Idj-NS-naA"/>
+                <constraint firstAttribute="trailingMargin" secondItem="ztD-1P-oxK" secondAttribute="trailing" id="NUm-5u-4uF"/>
+                <constraint firstItem="ztD-1P-oxK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="WOu-en-Q5x"/>
+                <constraint firstItem="ztD-1P-oxK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Z9M-kU-gLf"/>
+                <constraint firstAttribute="trailingMargin" secondItem="eDf-3G-rUs" secondAttribute="trailing" id="fdM-ki-33U"/>
+                <constraint firstAttribute="bottomMargin" secondItem="eDf-3G-rUs" secondAttribute="bottom" id="oY3-s1-2jA"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="HOI-2I-oe0"/>
+                    <exclude reference="Idj-NS-naA"/>
+                    <exclude reference="Z9M-kU-gLf"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+</document>

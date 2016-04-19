@@ -37,11 +37,11 @@ module ApplicationHelper
         gtl_feedback.each do |arr| 
             first_name = arr[0]
             safety = arr[1] * 10
-            friendliness = arr[2] / 2
-            beauty = arr[3] / 2
-            transportation = arr[4] / 2
-            cleanliness = arr[5] / 2
-            comfort = arr[6] / 2
+            friendliness = arr[2]
+            beauty = arr[3]
+            transportation = arr[4]
+            cleanliness = arr[5]
+            comfort = arr[6]
             info = arr[7]
 
             latitude = range(bottom_right_lat, top_left_lat)
@@ -49,6 +49,56 @@ module ApplicationHelper
 
             user = User.create(first_name: first_name, last_name: '', password: 'ffff', email: 'test@test.com')
             feedback = Feedback.create(name: 'Atlanta', safety: safety, cleanliness: cleanliness, friendliness: friendliness, beauty: beauty, transportation: transportation, comfort: comfort, info: info, latitude: latitude, longitude: longitude)
+
+            user.feedback << feedback
+        end
+
+
+        metz_feedback = [['User 1',9,3,4,5,5,4, ''],
+            ['User 2',9,5,3,4,5,4, ''],
+            ['gbarr',10,5,4,5,2,5, ''],
+            ['User 3',10,4,4,5,2,4, ''],
+            ['Bgirl_skc',9,5,5,4,5,2, 'I cant speak French which is why I have some issues.'],
+            ['User 4',10,4,3,2,3,3, ''],
+            ['User 5',8,4,3,5,2,4, ''],
+            ['Martha',9,3,4,5,5,4,'good'],
+            ['Austin',8,4,3,5,5,4, ''],
+            ['hahsbdnxkdndb',9,4,5,3,3,4, ''],
+            ['User 6',7,3,4,5,3,3, ''],
+            ['JDHammersmit',8,4,4,3,2,2, 'pretty cool'],
+            ['Voltaire',8,2,3,4,5,5, ''],
+            ['tomtom',9,4,4,4,2,3, ''],
+            ['Ruppert27', 8,4,5,2,3,5,'Its frequently cloudy and rainy, which makes it kinda miserable sometimes.  '],
+            ['User 7',8,4,5,3,5,4, 'The prison is ugly but its nice beside that. Worst thing that happens is people ask you for change'],
+            ['Shira',10,3,5,5,3,5, ''],
+            ['User 8',10,5,2,3,3,4,'Not too bad'],
+            ['User 9',8,3,2,5,5,2, ''],
+            ['User 10',7,4,3,5,5,5, ''],
+            ['GTL',8,4,4,3,4,4,'Metz is pretty good'],
+            ['User 11',9,4,5,5,5,5,'I love it!'],
+            ['User 13',7,4,4,5,3,5," "]]
+    
+        top_left_lat = 49.133369
+        top_left_long = 6.154863
+
+        bottom_right_lat = 49.097749
+        bottom_right_long = 6.207885
+
+        metz_feedback.each do |arr| 
+            first_name = arr[0]
+            safety = arr[1] * 10
+            friendliness = arr[2]
+            beauty = arr[3]
+            transportation = arr[4]
+            cleanliness = arr[5]
+            comfort = arr[6]
+            info = arr[7]
+
+            latitude = range(bottom_right_lat, top_left_lat)
+            longitude = range(top_left_long, bottom_right_long)
+
+            user = User.create(first_name: first_name, last_name: '', password: 'ffff', email: 'test@test.com')
+            feedback = Feedback.create(name: 'Metz', safety: safety, cleanliness: cleanliness, friendliness: friendliness, beauty: beauty, transportation: transportation, comfort: comfort, info: info, latitude: latitude, longitude: longitude)
 
             user.feedback << feedback
         end

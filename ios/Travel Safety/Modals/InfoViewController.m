@@ -10,8 +10,11 @@
 #import "ReviewMiniCell.h"
 #import "TravelSafetyAPI.h"
 #import "Feedback.h"
+#import "ExpertReviewViewController.h"
 
-@interface InfoViewController ()
+@interface InfoViewController () <ModalViewControllerDelegate>
+
+@property ExpertReviewViewController *expertReviewViewController;
 
 @end
 
@@ -27,34 +30,57 @@
     if ([self.currentPlace.formattedAddress containsString:@"Atlanta"]) {
         [self.cityName setText:@"Atlanta, GA"];
     }
+    BOOL metz = NO;
+    
     if (self.cityName.text == nil) {
         self.cityName.text = @"Metz, France";
+        metz = YES;
     }
     
     [self.starSelectView setStarsClickable:NO];
     
-    self.feedbackArray = [[NSArray alloc] init];
+    self.feedbackArray = [[NSMutableArray alloc] init];
     self.toDisplayArray = [[NSMutableArray alloc] init];
     
     if ([self.cityName.text containsString:@"Metz"] || [self.currentPlace.formattedAddress containsString:@"Metz"])
     {
         [self.touristSafetyIndexLabel setText:@"Tourist Safety Index: 82/100"];
         [self.crimeIndexLabel setText:@"Crime Index: 29/100"];
-        return;
+        metz = YES;
     } else {
         [self.touristSafetyIndexLabel setText:@"Tourist Safety Index: 63/100"];
         [self.crimeIndexLabel setText:@"Crime Index: 41/100"];
     }
     
-    [TravelSafetyAPI fetchFeedbackWithCompletion:^(BOOL success, NSArray *feedback) {
+    [TravelSafetyAPI fetchFeedbackWithCompletion:^(BOOL success, NSArray *feedbackResponse) {
         if (success) {
-            self.feedbackArray = feedback;
-            for (Feedback *feedback in self.feedbackArray)
+
+            for (Feedback *feedback in feedbackResponse)
             {
                 if ([[feedback info] length] > 0)
                 {
-                    [self.toDisplayArray addObject:feedback];
+                    if (metz) {
+                        if ([[feedback name] containsString:@"Metz"]) {
+                            [self.toDisplayArray addObject:feedback];
+                        }
+                    } else {
+                        if ([[feedback name] containsString:@"Atlanta"]) {
+                            [self.toDisplayArray addObject:feedback];
+                        }
+                    }
+                    
                 }
+                
+                if (metz) {
+                    if ([[feedback name] containsString:@"Metz"]) {
+                        [self.feedbackArray addObject:feedback];
+                    }
+                } else {
+                    if ([[feedback name] containsString:@"Atlanta"]) {
+                        [self.feedbackArray addObject:feedback];
+                    }
+                }
+
             }
             
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -70,27 +96,29 @@
     NSInteger total = 0;
     NSInteger positive = 0;
     
+    if ([self.feedbackArray count] == 0) return;
+    
     for (Feedback *feedbackItem in self.feedbackArray)
     {
         NSInteger subTotal = feedbackItem.cleanliness + feedbackItem.comfort + feedbackItem.friendliness + feedbackItem.beauty + feedbackItem.transportation;
-        if (subTotal / 5 > 2) {
+        if ((subTotal / 5) > 2) {
             positive++;
         }
-        total += feedbackItem.safety + feedbackItem.cleanliness + feedbackItem.comfort;
+        total += feedbackItem.cleanliness + feedbackItem.comfort + feedbackItem.friendliness + feedbackItem.beauty + feedbackItem.transportation;
     }
     
     total = total / (5 * [self.feedbackArray count]);
     
     if (total == 1) {
-        [self.starSelectView star1Touched:self];
+        [self.starSelectView star1Touched:nil];
     } else if (total == 2) {
-        [self.starSelectView star2Touched:self];
+        [self.starSelectView star2Touched:nil];
     } else if (total == 3) {
-        [self.starSelectView star3Touched:self];
+        [self.starSelectView star3Touched:nil];
     } else if (total == 4) {
-        [self.starSelectView star4Touched:self];
+        [self.starSelectView star4Touched:nil];
     } else if (total == 5) {
-        [self.starSelectView star5Touched:self];
+        [self.starSelectView star5Touched:nil];
     }
     
     self.recommendLabel.text = [NSString stringWithFormat:@"%li of %li people recommend", positive, [self.feedbackArray count]];
@@ -129,6 +157,27 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 120;
+}
+
+- (IBAction)viewExpertReview:(id)sender {
+    NSLog(@"Set travel plans button pressed");
+    
+    NSLog(@"Left button pressed");
+    
+    self.expertReviewViewController = [[ExpertReviewViewController alloc] initWithNibName:@"ExpertReviewViewController" bundle:nil];
+    [self addChildViewController:self.expertReviewViewController];
+    [self.expertReviewViewController setDelegate:self];
+    
+    
+    [self.expertReviewViewController.view setFrame:self.view.bounds];
+    
+    [self.view addSubview:self.expertReviewViewController.view];
+    [self.expertReviewViewController didMoveToParentViewController:self];
+}
+
+-(void)exitRequested:(ModalViewController *)controller
+{
+    [self.expertReviewViewController.view removeFromSuperview];
 }
 
 /*

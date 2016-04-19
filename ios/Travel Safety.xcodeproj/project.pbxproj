@@ -22,6 +22,8 @@
 		D45E27891CBDAFFB00F47320 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = D45E27881CBDAFFB00F47320 /* User.m */; };
 		D45E278D1CBE3A1800F47320 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D45E278B1CBE3A1800F47320 /* ProfileViewController.m */; };
 		D45E278E1CBE3A1800F47320 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D45E278C1CBE3A1800F47320 /* ProfileViewController.xib */; };
+		D45FF3051CC6804A00936E81 /* ExpertReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D45FF3031CC6804A00936E81 /* ExpertReviewViewController.m */; };
+		D45FF3061CC6804A00936E81 /* ExpertReviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D45FF3041CC6804A00936E81 /* ExpertReviewViewController.xib */; };
 		D4AD281F1CC62B6B0024EBF4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4AD281E1CC62B6B0024EBF4 /* LoginViewController.m */; };
 		D4AD28231CC634650024EBF4 /* TravelPlansViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4AD28211CC634650024EBF4 /* TravelPlansViewController.m */; };
 		D4AD28241CC634650024EBF4 /* TravelPlansViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4AD28221CC634650024EBF4 /* TravelPlansViewController.xib */; };
@@ -63,6 +65,9 @@
 		D45E278A1CBE3A1800F47320 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileViewController.h; path = Modals/ProfileViewController.h; sourceTree = "<group>"; };
 		D45E278B1CBE3A1800F47320 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileViewController.m; path = Modals/ProfileViewController.m; sourceTree = "<group>"; };
 		D45E278C1CBE3A1800F47320 /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProfileViewController.xib; path = Modals/ProfileViewController.xib; sourceTree = "<group>"; };
+		D45FF3021CC6804A00936E81 /* ExpertReviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpertReviewViewController.h; path = "View Controllers/ExpertReviewViewController.h"; sourceTree = "<group>"; };
+		D45FF3031CC6804A00936E81 /* ExpertReviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExpertReviewViewController.m; path = "View Controllers/ExpertReviewViewController.m"; sourceTree = "<group>"; };
+		D45FF3041CC6804A00936E81 /* ExpertReviewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ExpertReviewViewController.xib; path = "View Controllers/ExpertReviewViewController.xib"; sourceTree = "<group>"; };
 		D4AD281D1CC62B6B0024EBF4 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = "View Controllers/LoginViewController.h"; sourceTree = "<group>"; };
 		D4AD281E1CC62B6B0024EBF4 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = "View Controllers/LoginViewController.m"; sourceTree = "<group>"; };
 		D4AD28201CC634650024EBF4 /* TravelPlansViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TravelPlansViewController.h; path = Modals/TravelPlansViewController.h; sourceTree = "<group>"; };
@@ -203,6 +208,9 @@
 				D4AD28201CC634650024EBF4 /* TravelPlansViewController.h */,
 				D4AD28211CC634650024EBF4 /* TravelPlansViewController.m */,
 				D4AD28221CC634650024EBF4 /* TravelPlansViewController.xib */,
+				D45FF3021CC6804A00936E81 /* ExpertReviewViewController.h */,
+				D45FF3031CC6804A00936E81 /* ExpertReviewViewController.m */,
+				D45FF3041CC6804A00936E81 /* ExpertReviewViewController.xib */,
 			);
 			name = Modals;
 			sourceTree = "<group>";
@@ -268,6 +276,7 @@
 				TargetAttributes = {
 					D42B7CC81C8F3127008744CE = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 9525LJ6YEJ;
 					};
 				};
 			};
@@ -302,6 +311,7 @@
 				D42B7CD91C8F3127008744CE /* Assets.xcassets in Resources */,
 				D4CC60431C8F810C00D114E4 /* InfoViewController.xib in Resources */,
 				D42B7CD71C8F3127008744CE /* Main.storyboard in Resources */,
+				D45FF3061CC6804A00936E81 /* ExpertReviewViewController.xib in Resources */,
 				D403A0F51CAB1F5A00CF5909 /* StarSelectView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,6 +378,7 @@
 				D42B7CD11C8F3127008744CE /* AppDelegate.m in Sources */,
 				D45E278D1CBE3A1800F47320 /* ProfileViewController.m in Sources */,
 				D403A0EB1CAB1B6000CF5909 /* TravelSafetyAPI.m in Sources */,
+				D45FF3051CC6804A00936E81 /* ExpertReviewViewController.m in Sources */,
 				D4CC60501C9022FF00D114E4 /* ReviewMiniCell.m in Sources */,
 				D4CC60461C8F836000D114E4 /* ModalViewController.m in Sources */,
 				D4CC60391C8F7FBD00D114E4 /* ModalView.m in Sources */,
@@ -489,11 +500,14 @@
 			baseConfigurationReference = 9968FFFCA9DC8C2D791E08B0 /* Pods-Travel Safety.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Travel Safety/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.logikcomputing.Travel-Safety";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -502,11 +516,14 @@
 			baseConfigurationReference = C43970FE4B6E2AC17EF07C38 /* Pods-Travel Safety.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Travel Safety/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.logikcomputing.Travel-Safety";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

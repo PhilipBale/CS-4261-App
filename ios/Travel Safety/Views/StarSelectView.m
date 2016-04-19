@@ -26,7 +26,7 @@
 }
 
 - (IBAction)star1Touched:(id)sender {
-    if (!self.starsClickable) return;
+    if (!self.starsClickable && sender) return;
     
     [self.star1 setBackgroundImage:self.goldStar forState:UIControlStateNormal];
     [self.star2 setBackgroundImage:self.greyStar forState:UIControlStateNormal];
@@ -37,7 +37,7 @@
     self.currentValue = 1;
 }
 - (IBAction)star2Touched:(id)sender {
-    if (!self.starsClickable) return;
+    if (!self.starsClickable && sender) return;
     
     [self.star1 setBackgroundImage:self.goldStar forState:UIControlStateNormal];
     [self.star2 setBackgroundImage:self.goldStar forState:UIControlStateNormal];
@@ -47,7 +47,7 @@
     self.currentValue = 2;
 }
 - (IBAction)star3Touched:(id)sender {
-    if (!self.starsClickable) return;
+    if (!self.starsClickable && sender) return;
     
     [self.star1 setBackgroundImage:self.goldStar forState:UIControlStateNormal];
     [self.star2 setBackgroundImage:self.goldStar forState:UIControlStateNormal];
@@ -57,7 +57,7 @@
     self.currentValue = 3;
 }
 - (IBAction)star4Touched:(id)sender {
-    if (!self.starsClickable) return;
+    if (!self.starsClickable && sender) return;
     
     [self.star1 setBackgroundImage:self.goldStar forState:UIControlStateNormal];
     [self.star2 setBackgroundImage:self.goldStar forState:UIControlStateNormal];
@@ -68,7 +68,7 @@
 }
 
 - (IBAction)star5Touched:(id)sender {
-    if (!self.starsClickable) return;
+    if (!self.starsClickable && sender) return;
     
     [self.star1 setBackgroundImage:self.goldStar forState:UIControlStateNormal];
     [self.star2 setBackgroundImage:self.goldStar forState:UIControlStateNormal];
