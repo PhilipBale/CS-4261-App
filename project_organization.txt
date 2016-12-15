@@ -1,0 +1,155 @@
+iOS
++Managers
+    -HTTP Manager
+    -TravelSafety API Interface
++Models
+    -Feeback Object
+    -User Object
++Modal Views
+    -Add Feedback View
+    -Location Info View
+    -Profile View
+    -Travel Plans View
+    -Expert Review View
++Views
+    -Review Cell
+    -Modal View (abstract superclass)
+    -Star Select View
++View Controllers
+    -Login View Controller
+    -Map View Controller
+    -Modal View Controller (abstract superclass)
+
+
+
+- (void)POST:(NSString *)URLString parameters:(id)parameters success:(void (^)(id))success failure:(void (^)(NSError *))failure
+{
+    [self POST:URLString parameters:parameters success:success failure:failure attemptsLeft:kAPIAttempts];
+}
+
+- (void)POST:(NSString *)URLString parameters:(id)parameters success:(void (^)(id))success failure:(void (^)(NSError *))failure attemptsLeft:(NSInteger)attemptsLeft
+{
+    [super POST:URLString parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        BOOL trueSuccess = [self wasSuccessfulPost:responseObject];
+        if (success && trueSuccess)
+        {
+            success(responseObject);
+        }
+        else if (!trueSuccess)
+        {
+            if (failure)
+            {
+                NSLog(@"NOTICE: Successful HTTP POST but incorrect status code match");
+                failure(nil);
+            }
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (attemptsLeft)
+        {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(kAPIAttemptDelay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self POST:URLString parameters:parameters success:success failure:failure attemptsLeft:attemptsLeft - 1];
+            });
+        } else if (failure)
+        {
+            NSLog(@"HTTP MANAGER FINISHED FAILING POST AFTER %d attempts with %f delays inbetween", kAPIAttempts, kAPIAttemptDelay);
+            failure(error);
+        }
+    }];
+}
+
+- (IBAction)rightButtonPressed:(id)sender {
+    NSLog(@"Right button pressed");
+    AddFeedbackViewController *addFeedbackViewController = [[AddFeedbackViewController alloc] initWithNibName:@"AddFeedbackViewController" bundle:nil];
+    [addFeedbackViewController setCurrentPlace:self.currentPlace];
+    [addFeedbackViewController setCurrentUser:self.user];
+    
+    [self addChildViewController:addFeedbackViewController];
+    [addFeedbackViewController setDelegate:self];
+    
+    
+    [addFeedbackViewController.view setFrame:self.modalContainerView.frame];
+    [self.view addSubview:addFeedbackViewController.view];
+    [addFeedbackViewController didMoveToParentViewController:self];
+}
+
+- (IBAction)centerButtonPressed:(id)sender {
+    NSLog(@"Center button pressed");
+    
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Emergency Contact"
+                                                                   message:nil
+                                                            preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction *button1 = [UIAlertAction actionWithTitle:@"Call Police" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * action) {
+        //code to run once button is pressed
+    }];
+    UIAlertAction *button2 = [UIAlertAction actionWithTitle:@"Call Ambulance" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+        //code to run once button is pressed
+    }];
+    
+    UIAlertAction *button3 = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        //code to run once button is pressed
+    }];
+    
+    [alert addAction:button1];
+    [alert addAction:button2];
+    [alert addAction:button3];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+
+
+
+Server
++Models
+    -Feedback Object
+    -User Object
++Views
+    -None, all JSON rendered automatically via rails in controller
++Controllers
+    -API Controller (abstract superclass containing authentication)
+        ~Feedback Controller
+        ~User Controller
++Other
+    -Routes (defines HTML request routing)
+
+  def post_feedback
+    authenticate_request
+    post_feedback_params
+
+    email = params[:feedback][:email]
+    params[:feedback].delete(:email)
+
+    if email.present?
+      @user = User.where(email: email).first
+    end
+
+    if not @user.present?
+      @user = User.first
+    end
+
+    new_feedback = Feedback.create(post_feedback_params)
+    new_feedback.user_id = @user.id
+    
+    if !new_feedback.save
+      render json: {error: 'Unable to save new feedback', messages: @user.errors.full_messages, status: :precondition_failed},
+             status: :precondition_failed and return
+    end
+
+    @user.feedback << new_feedback
+
+    render json: {status: :created, message: 'Feedback succesfully posted', feedback: new_feedback}, status: :created
+  end
+
+
+
+
+  root to: 'static_pages#index'
+
+  namespace :api do
+    namespace :v1 do
+      get '/', to: 'api#index'
+      post 'post_feedback', to: 'feedback#post_feedback'
+      get 'fetch_feedback', to: 'feedback#fetch_feedback'
+      get 'login_user', to: 'user#login_user'
+    end
+  end
